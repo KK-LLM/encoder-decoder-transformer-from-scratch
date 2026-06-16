@@ -1,0 +1,46 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# Model weights (checkpoints)
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoints/*.pt
+
+# Training outputs
+minimal_transformer_*_outputs/
+logs/
+results/
+api_probe_outputs/
+
+# Root-level large datasets (only v0_baseline/data/opus100_en_zh_local is tracked)
+/opus100_en_zh_local/
+combined_en_zh_dataset/
+curriculum_v1/
+downloaded_raw_data/
+
+# Old training scripts and backups
+stage5*/
+stage5_1_backup*/
+llm_complex_v3_a800_train_output/
+
+# Misc
+*.tgz
+wandb/
+.data

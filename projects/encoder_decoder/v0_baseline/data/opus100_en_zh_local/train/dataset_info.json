@@ -1,0 +1,47 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "en-zh",
+  "dataset_name": "opus-100",
+  "dataset_size": 201085903,
+  "description": "",
+  "download_size": 143414756,
+  "features": {
+    "translation": {
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "_type": "Translation"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 344500659,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 511364,
+      "num_examples": 2000,
+      "dataset_name": "opus-100"
+    },
+    "train": {
+      "name": "train",
+      "num_bytes": 200062183,
+      "num_examples": 1000000,
+      "dataset_name": "opus-100"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 512356,
+      "num_examples": 2000,
+      "dataset_name": "opus-100"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
