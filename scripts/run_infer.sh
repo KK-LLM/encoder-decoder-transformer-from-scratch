@@ -7,5 +7,5 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-cd "$PROJECT_DIR/projects/encoder_decoder/v0_baseline/src"
+cd "$PROJECT_DIR/encoder_decoder/v0_baseline/src"
 python infer_encoder_decoder.py

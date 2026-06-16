@@ -23,13 +23,6 @@
 - [ ] 抽离 model.py 模块
 - [ ] 引入验证集 BLEU early stopping
 
-## Decoder-only（计划中）
-
-- [ ] 手写 GPT-style Decoder-only 架构
-- [ ] 训练闭环（语言建模 / next-token prediction）
-- [ ] 推理闭环（自回归文本生成）
-- [ ] 支持 KV Cache 推理加速
-
 ## 长期展望
 
 - [ ] LoRA / QLoRA 微调实践

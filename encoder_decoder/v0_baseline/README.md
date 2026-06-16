@@ -32,7 +32,7 @@
 - Encoder / Decoder / Generator
 - EncoderDecoderTransformer（顶层封装）
 
-详见 [架构说明文档](../../../docs/architecture_notes.md)。
+详见 [架构说明文档](../../docs/architecture_notes.md)。
 
 ## 数据
 
@@ -141,7 +141,7 @@
 ### 训练
 
 ```bash
-cd projects/encoder_decoder/v0_baseline/src
+cd encoder_decoder/v0_baseline/src
 python train_encoder_decoder_opus.py
 ```
 
@@ -150,6 +150,6 @@ python train_encoder_decoder_opus.py
 修改 `infer_encoder_decoder.py` 中的 `MODEL_DIR` 和 `MODEL_PATH` 指向训练输出的 checkpoint 目录，然后：
 
 ```bash
-cd projects/encoder_decoder/v0_baseline/src
+cd encoder_decoder/v0_baseline/src
 python infer_encoder_decoder.py
 ```
