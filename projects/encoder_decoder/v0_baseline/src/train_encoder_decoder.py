@@ -12,7 +12,8 @@ from torch.utils.data import Dataset as TorchDataset, DataLoader
 from datasets import Dataset, DatasetDict
 from transformers import AutoTokenizer
 
-# 基于脚本文件位置解析项目根目录，确保从任意位置运行均可正确找到 tokenizer 和数据。
+# Resolve resources relative to the v0_baseline directory so the script can
+# run from the repo root or through scripts/run_train_encoder_decoder.sh.
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -956,7 +957,7 @@ def main() -> None:
     # ============================================================
     # 1. 基础配置
     # ============================================================
-    tokenizer_name = os.path.join(_PROJECT_ROOT, "tokenizer")
+    tokenizer_name = os.path.join(_PROJECT_ROOT, "tokenizer", "bert_base_multilingual_cased_tokenizer")
     new_tokenizer_vocab_size = 16000
 
     source_lang = "en"
@@ -986,7 +987,7 @@ def main() -> None:
     num_workers = min(8, os.cpu_count() or 1)
     pin_memory = device.type == "cuda"
 
-    output_dir = "minimal_transformer_en_zh_opus_outputs"
+    output_dir = os.path.join(_PROJECT_ROOT, "minimal_transformer_en_zh_opus_outputs")
 
     print(f"device={device}")
 

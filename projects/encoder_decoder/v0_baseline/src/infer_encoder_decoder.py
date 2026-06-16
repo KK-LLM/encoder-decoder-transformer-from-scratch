@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 from transformers import AutoTokenizer, PreTrainedTokenizerFast
 
-# 基于脚本文件位置解析项目根目录，确保从任意位置运行均可正确找到 tokenizer。
+# Resolve checkpoints/tokenizer relative to the v0_baseline directory.
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -16,12 +16,12 @@ _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # 0. 路径与模型配置
 # ============================================================
 
-MODEL_DIR = "minimal_transformer_en_zh_opus_outputs"
+MODEL_DIR = os.path.join(_PROJECT_ROOT, "minimal_transformer_en_zh_opus_outputs")
 MODEL_PATH = os.path.join(MODEL_DIR, "checkpoint_epoch_4.pt")
+TOKENIZER_DIR = os.path.join(MODEL_DIR, "tokenizer")
 
-# 优先使用项目内置 tokenizer。
-TOKENIZER_DIR = os.path.join(_PROJECT_ROOT, "tokenizer")
-FALLBACK_TOKENIZER_DIR = os.path.join(_PROJECT_ROOT, "tokenizer")
+# 本地 48000 tokenizer。
+FALLBACK_TOKENIZER_DIR = os.path.join(MODEL_DIR, "tokenizer")
 
 # 推理长度配置。
 MAX_SRC_LEN = 96

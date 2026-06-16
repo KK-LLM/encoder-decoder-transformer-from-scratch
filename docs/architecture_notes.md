@@ -1,93 +1,67 @@
-# 模型架构说明
+# Architecture Notes
 
-## Encoder-Decoder Transformer (Post-LN)
+本文记录当前 Encoder-Decoder Transformer v0_baseline 的模型结构。模型源码内嵌在训练脚本和推理脚本中，未拆分为独立 `model.py`。
 
-本项目实现了原始 "Attention Is All You Need" 论文中的 Transformer Encoder-Decoder 架构（Post-LayerNorm 变体）。
+## Overall Architecture
 
-### 整体结构
+当前模型是原始 Transformer Encoder-Decoder 架构，使用 Post-LN residual connection：
 
-```
-Input (src)                          Input (tgt, shifted right)
-    |                                      |
-[TokenEmbedding]                      [TokenEmbedding]
-    |                                      |
-[PositionalEncoding]                  [PositionalEncoding]
-    |                                      |
-[Encoder × N]                         [Decoder × N]
-    |                                      ↑
-    └────────→ memory ─────────────────────┘
-                                               |
-                                          [Generator (Linear)]
-                                               |
-                                          logits → CrossEntropyLoss
-```
-
-### Encoder Layer
-
-```
-x ──→ MultiHeadAttention(q=x, k=x, v=x, mask=src_mask) ──→ Dropout ──→ + ──→ LayerNorm
-      (self-attention)                                              ↑        |
-                                                                    |        |
-                                                              residual ────→ FFN ──→ Dropout ──→ + ──→ LayerNorm → output
-                                                                                                 ↑
-                                                                                           residual
-```
-
-### Decoder Layer
-
-```
-x ──→ Masked MultiHeadAttention(q=x, k=x, v=x, mask=tgt_mask) ──→ Dropout ──→ + ──→ LayerNorm
-      (self-attention, causal)                                                 ↑        |
-                                                                         residual     |
-                                                                                      └──→ CrossAttention(q=x, k=memory, v=memory, mask=src_mask)
-                                                                                              |
-                                                                                         Dropout ──→ + ──→ LayerNorm
-                                                                                                      ↑        |
-                                                                                                residual     |
-                                                                                                             └──→ FFN ──→ Dropout ──→ + ──→ LayerNorm → output
-                                                                                                                                      ↑
-                                                                                                                                residual
-```
-
-### 关键模块
-
-#### MultiHeadAttention
-
-- Q/K/V 线性投影：`nn.Linear(d_model, d_model)`
-- Split heads：`[B, L, d_model] → [B, H, L, d_head]`
-- Scaled dot-product attention：`softmax(QK^T / √d_head) × V`
-- Combine heads + output projection
-
-#### PositionalEncoding
-
-- 正弦/余弦固定位置编码（不可学习参数）
-- PE(pos, 2i) = sin(pos / 10000^(2i/d_model))
-- PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))
-
-#### PostNormResidualConnection
-
-```
+```text
 output = LayerNorm(residual + Dropout(sublayer_out))
 ```
 
-与 Pre-LN（LayerNorm 在前）不同，Post-LN 是原论文的默认方式。
+## Main Components
 
-### Mask 机制
+| 模块 | 说明 |
+|------|------|
+| `TokenEmbedding` | token id embedding，并乘以 `sqrt(d_model)` |
+| `PositionalEncoding` | sinusoidal positional encoding |
+| `LayerNorm` | 手写 layer normalization |
+| `PostNormResidualConnection` | Post-LN residual connection |
+| `MultiHeadAttention` | 手写 Q/K/V projection、split heads、scaled dot-product attention、combine heads |
+| `PositionwiseFeedForward` | 两层 FFN + ReLU + dropout |
+| `EncoderLayer` | self-attention + FFN |
+| `DecoderLayer` | masked self-attention + cross-attention + FFN |
+| `Encoder` | 多层 encoder stack |
+| `Decoder` | 多层 decoder stack |
+| `Generator` | decoder hidden states 到 vocabulary logits |
+| `EncoderDecoderTransformer` | encode / decode / forward 顶层封装 |
 
-| Mask | 形状 | 用途 |
-|------|------|------|
-| src_mask | [B, 1, 1, S] | Encoder self-attention + Decoder cross-attention；屏蔽 PAD token |
-| tgt_mask | [B, 1, T, T] | Decoder self-attention；下三角因果掩码 + PAD 掩码 |
+## Masks
 
-### 训练策略
+`src_mask` 用于屏蔽 source padding token：
 
-- **Noam Learning Rate**：warmup 阶段线性增长，之后按 step^(-0.5) 衰减
-- **Label Smoothing**：0.1，缓解过拟合
-- **Gradient Clipping**：max_norm=1.0，稳定训练
-- **Mixed Precision**：BF16 autocast，加速训练
+```text
+src_mask: [B, 1, 1, S]
+```
 
-### 推理策略
+`tgt_mask` 同时包含 target padding mask 和 causal mask：
 
-- Greedy decode：每步取 logit 最大的 token
-- 禁止生成 PAD / BOS token
-- 前 min_new_tokens 步禁止生成 EOS，防止空输出
+```text
+tgt_mask: [B, 1, T, T]
+```
+
+causal mask 使用下三角矩阵，保证 decoder 当前位置不能看到未来 token。
+
+## Training Forward
+
+训练时 target 会拆成：
+
+```text
+tgt_in  = tgt[:, :-1]
+tgt_out = tgt[:, 1:]
+```
+
+模型输出 logits 后，对 `tgt_out` 计算 cross entropy loss，并使用 `PAD_ID` 作为 ignore index。
+
+## Greedy Decode
+
+推理脚本当前实现 greedy decode：
+
+1. 编码 source sentence。
+2. decoder 从 BOS token 开始。
+3. 每一步构造 causal `tgt_mask`。
+4. 取最后一个位置 logits 的 argmax 作为 next token。
+5. 遇到 EOS 或达到最大长度后停止。
+
+当前版本不提交推理样例或翻译质量结论。

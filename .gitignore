@@ -1,4 +1,4 @@
-# Byte-compiled / cache
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
@@ -16,31 +16,65 @@ __pycache__/
 *.ipynb
 .ipynb_checkpoints/
 
-# Model weights (checkpoints)
+# Secrets and private config
+.env
+.env.*
+*.pem
+*.key
+*token*
+*secret*
+
+# Model weights and checkpoints
 *.pt
 *.pth
 *.bin
 *.safetensors
-checkpoints/*.pt
+checkpoints/
+**/checkpoints/*.pt
+**/checkpoints/*.pth
+**/checkpoints/*.bin
+**/checkpoints/*.safetensors
 
-# Training outputs
+# Training and inference outputs
 minimal_transformer_*_outputs/
+**/minimal_transformer_*_outputs/
 logs/
 results/
 api_probe_outputs/
-
-# Root-level large datasets (only v0_baseline/data/opus100_en_zh_local is tracked)
-/opus100_en_zh_local/
-combined_en_zh_dataset/
-curriculum_v1/
-downloaded_raw_data/
-
-# Old training scripts and backups
-stage5*/
-stage5_1_backup*/
-llm_complex_v3_a800_train_output/
-
-# Misc
-*.tgz
 wandb/
+
+# Root-level local datasets and old generated datasets.
+# The curated OPUS-100 dataset under projects/encoder_decoder/v0_baseline/data is tracked via Git LFS.
+/opus100_en_zh_local/
+/combined_en_zh_dataset/
+/curriculum_v1/
+/downloaded_raw_data/
+/en_zh_curriculum_v1_tokenizer_48000/
+/minimal_transformer_en_zh_tokenizer/
+/minimal_transformer_en_zh_5090_outputs_stage_v1/
+/minimal_transformer_en_zh_5090_outputs_v4/
+/stage5*/
+/stage5_*/
+/stage5_dataset/
+/stage5_1_dataset/
+/stage5_2_dataset/
+/stage5_backup*/
+/stage5_1_backup*/
+
+# Local scratch scripts and legacy experiments kept outside the public repo layout
+/*.py
+/Encoder-Decoder*.py
+/Hidden-states-test.py
+/Makefile
+/images/
+/writeup/
+/.github/
+
+# Generated documentation assets from local notes
+/docs/*.html
+/docs/*.css
+/docs/header-includes.yaml
+
+# Archives and temporary files
+*.tgz
 .data
