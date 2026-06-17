@@ -12,7 +12,7 @@
 | overfitting | epoch 20 后 valid_loss 波动上升 |
 | best checkpoint | `checkpoint_epoch_20.pt` |
 
-完整指标见 [logs/train_metrics.csv](../projects/encoder_decoder/v0_baseline/logs/train_metrics.csv)，训练摘要见 [logs/train_log_summary.md](../projects/encoder_decoder/v0_baseline/logs/train_log_summary.md)。推理结果见 [results/inference_report.md](../projects/encoder_decoder/v0_baseline/results/inference_report.md)。
+完整指标见 [logs/train_metrics.csv](../encoder_decoder/v0_baseline/logs/train_metrics.csv)，训练摘要见 [logs/train_log_summary.md](../encoder_decoder/v0_baseline/logs/train_log_summary.md)。推理结果见 [results/inference_report.md](../encoder_decoder/v0_baseline/results/inference_report.md)。
 
 ## Objective
 

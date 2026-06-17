@@ -25,11 +25,11 @@ __pycache__/
 *secret*
 
 # Allow tracked tokenizer directories
-!projects/encoder_decoder/v0_baseline/tokenizer/
-!projects/encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/
-!projects/encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/**
-!projects/encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/
-!projects/encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/**
+!encoder_decoder/v0_baseline/tokenizer/
+!encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/
+!encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/**
+!encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/
+!encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/**
 
 # Model weights and checkpoints
 *.pt
@@ -51,7 +51,7 @@ api_probe_outputs/
 wandb/
 
 # Root-level local datasets and old generated datasets.
-# The curated OPUS-100 dataset under projects/encoder_decoder/v0_baseline/data is tracked via Git LFS.
+# The curated OPUS-100 dataset under encoder_decoder/v0_baseline/data is tracked via Git LFS.
 /opus100_en_zh_local/
 /combined_en_zh_dataset/
 /curriculum_v1/
@@ -87,9 +87,9 @@ wandb/
 .data
 
 # --- Allow v0_baseline checkpoint, logs, results and trained tokenizer ---
-!projects/encoder_decoder/v0_baseline/checkpoints/
-!projects/encoder_decoder/v0_baseline/checkpoints/*.pt
-!projects/encoder_decoder/v0_baseline/logs/
-!projects/encoder_decoder/v0_baseline/logs/**
-!projects/encoder_decoder/v0_baseline/results/
-!projects/encoder_decoder/v0_baseline/results/**
+!encoder_decoder/v0_baseline/checkpoints/
+!encoder_decoder/v0_baseline/checkpoints/*.pt
+!encoder_decoder/v0_baseline/logs/
+!encoder_decoder/v0_baseline/logs/**
+!encoder_decoder/v0_baseline/results/
+!encoder_decoder/v0_baseline/results/**
