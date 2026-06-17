@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-本项目聚焦原始 Transformer Encoder-Decoder 架构，不依赖 `nn.Transformer` 封装。训练脚本内嵌模型源码和训练流程，推理脚本内嵌同结构模型源码和 greedy decode 流程，方便面试官直接阅读完整 pipeline。
+本项目聚焦原始 Transformer Encoder-Decoder 架构，不依赖 `nn.Transformer` 封装。训练脚本和推理脚本均保留完整模型结构与核心流程，便于阅读和复现端到端训练、验证与推理 pipeline。
 
 当前仓库只包含 Encoder-Decoder Transformer 相关内容。Decoder-only from scratch 后续会单独新建仓库，不属于当前仓库。
 
