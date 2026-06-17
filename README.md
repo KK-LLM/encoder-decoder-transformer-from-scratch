@@ -2,7 +2,7 @@
 
 > Encoder-Decoder Transformer from scratch learning and training lab.
 
-这个仓库用于整理一个手写 Encoder-Decoder Transformer 英文到中文翻译项目。当前版本是 `v0_baseline`，重点展示从零实现模型结构、训练闭环、推理闭环、tokenizer 使用和 checkpoint 保存机制。当前训练仍在进行中，本轮不提交训练日志、推理日志、推理样例或模型权重。
+这个仓库用于整理一个手写 Encoder-Decoder Transformer 英文到中文翻译项目。当前版本是 `v0_baseline`，重点展示从零实现模型结构、训练闭环、推理闭环、tokenizer 使用和 checkpoint 保存机制。v0_baseline 训练已完成，已提交 baseline checkpoint、训练日志、推理日志、固定测试集分析和错误分析。
 
 ## Project Overview
 
@@ -21,7 +21,7 @@
 
 | 项目 | 版本 | 状态 |
 |------|------|------|
-| Encoder-Decoder Transformer | [v0_baseline](./projects/encoder_decoder/v0_baseline/) | 训练进行中 |
+| Encoder-Decoder Transformer | [v0_baseline](./projects/encoder_decoder/v0_baseline/) | 训练已完成，已提交 checkpoint 和完整日志 |
 
 ## Repository Structure
 
@@ -39,20 +39,36 @@
 ├── projects/
 │   └── encoder_decoder/
 │       ├── README.md
-│       └── v0_baseline/
+│   └── v0_baseline/
+│       ├── README.md
+│       ├── src/
+│       │   ├── train_encoder_decoder.py
+│       │   └── infer_encoder_decoder.py
+│       ├── data/
+│       │   ├── README.md
+│       │   ├── sample_data.jsonl
+│       │   └── opus100_en_zh_local/
+│       ├── tokenizer/
+│       │   ├── README.md
+│       │   ├── bert_base_multilingual_cased_tokenizer/
+│       │   └── trained_tokenizer_16000/
+│       ├── checkpoints/
+│       │   ├── README.md
+│       │   └── checkpoint_epoch_20.pt
+│       ├── logs/
+│       │   ├── README.md
+│       │   ├── train_metrics.csv
+│       │   ├── train_log_summary.md
+│       │   ├── opus_train_log.log
+│       │   ├── inference_eval_epoch20.jsonl
+│       │   ├── fixed_eval_epoch20.jsonl
+│       │   ├── inference_metrics_epoch20.csv
+│       │   └── tokenizer_term_check_epoch20.txt
+│       └── results/
 │           ├── README.md
-│           ├── src/
-│           │   ├── train_encoder_decoder.py
-│           │   └── infer_encoder_decoder.py
-│           ├── data/
-│           │   ├── README.md
-│           │   ├── sample_data.jsonl
-│           │   └── opus100_en_zh_local/
-│           ├── tokenizer/
-│           │   ├── README.md
-│           │   └── bert_base_multilingual_cased_tokenizer/
-│           └── checkpoints/
-│               └── README.md
+│           ├── translation_examples.md
+│           ├── inference_report.md
+│           └── inference_examples.md
 └── scripts/
     ├── run_train_encoder_decoder.sh
     └── run_infer_encoder_decoder.sh
@@ -106,7 +122,7 @@ projects/encoder_decoder/v0_baseline/src/train_encoder_decoder.py
 projects/encoder_decoder/v0_baseline/src/infer_encoder_decoder.py
 ```
 
-推理脚本支持加载训练输出目录中的 tokenizer 和 checkpoint，构造 `src_mask` / `tgt_mask`，并使用 greedy decode 执行自回归翻译。由于当前训练仍在进行中，本轮不提交推理样例和推理效果结论。
+推理脚本支持加载训练输出目录中的 tokenizer 和 checkpoint，构造 `src_mask` / `tgt_mask`，并使用 greedy decode 执行自回归翻译。v0_baseline 训练完成后已使用 epoch 20 checkpoint 执行 inference evaluation，包含 train / validation / test 抽样和 fixed_simple / fixed_terms / fixed_logic 三类专项测试，详见 [inference_report.md](./projects/encoder_decoder/v0_baseline/results/inference_report.md)。
 
 ## Tokenizer
 
@@ -116,7 +132,11 @@ projects/encoder_decoder/v0_baseline/src/infer_encoder_decoder.py
 projects/encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/
 ```
 
-训练脚本会基于该 tokenizer 和训练语料运行 `train_new_from_iterator(..., vocab_size=16000)`，生成源语言和目标语言共用的 16000 vocab tokenizer。训练完成后，生成的 tokenizer 会随 checkpoint 输出到训练输出目录。
+训练脚本会基于该 tokenizer 和训练语料运行 `train_new_from_iterator(..., vocab_size=16000)`，生成源语言和目标语言共用的 16000 vocab tokenizer。训练完成后生成的 tokenizer 已随着 best checkpoint 上传至：
+
+```text
+projects/encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/
+```
 
 ## Dataset
 
@@ -136,21 +156,28 @@ projects/encoder_decoder/v0_baseline/data/opus100_en_zh_local/
 - 训练结束保存：`final_model.pt`
 - 每次保存 checkpoint 时同步保存训练时生成的 tokenizer
 
-当前脚本只保存 `epoch` 和 `model_state_dict`，不保存 optimizer / scheduler 状态，因此当前版本不支持自动续训。本轮不提交任何真实权重文件。
+当前脚本只保存 `epoch` 和 `model_state_dict`，不保存 optimizer / scheduler 状态，因此当前版本不支持自动续训。v0_baseline 训练完成后已提交 best checkpoint：
+
+```text
+projects/encoder_decoder/v0_baseline/checkpoints/checkpoint_epoch_20.pt
+```
+
+该 checkpoint 基于 valid_loss 全局最低（epoch 20，valid_loss=3.4693）选择，使用 Git LFS 管理。
 
 ## Current Training Status
 
-当前训练仍在进行中。本轮 GitHub 提交只整理项目结构、代码、数据说明、tokenizer 说明、checkpoint 说明和当前版本限制，不写最终训练结果、不写最佳 epoch、不写 best valid loss、不写推理效果结论。
+v0_baseline 训练已完成（48 epoch）。valid_loss 在 epoch 20 达到最低（3.4693），此后出现 overfitting 趋势。选择 checkpoint_epoch_20.pt 作为 baseline checkpoint。完整训练指标见 [train_metrics.csv](./projects/encoder_decoder/v0_baseline/logs/train_metrics.csv)，训练摘要见 [train_log_summary.md](./projects/encoder_decoder/v0_baseline/logs/train_log_summary.md)。
 
 ## Limitations
 
 1. 当前版本是 `v0_baseline`，主要用于展示从零实现 Encoder-Decoder Transformer 的完整闭环。
-2. 当前训练仍在进行中，本轮不提交训练日志、推理日志、推理样例和 checkpoint。
-3. 当前不提供最终训练指标、BLEU / chrF 或翻译质量结论。
+2. v0_baseline 训练已完成，bug 已被提交 checkpoint、训练日志、推理日志和固定测试集分析。
+3. 当前不提供 BLEU / chrF 等自动评测指标，推理使用 greedy decode。
 4. 推理脚本当前使用 greedy decode。
 5. 模型源码内嵌在 train / infer 脚本中，未拆分为独立 `model.py`。
 6. checkpoint 当前只保存 `epoch` 和 `model_state_dict`，不保存 optimizer / scheduler 状态，也不支持自动续训。
 7. 当前版本更强调完整 pipeline 和源码可读性，而不是最终翻译效果最优。
+8. 在 OPUS-100 UN 语体内模型可生成流畅中文，但技术术语和日常英语泛化能力受限，详见 [inference_report](./projects/encoder_decoder/v0_baseline/results/inference_report.md)。
 
 ## How to Run
 
@@ -179,7 +206,9 @@ bash scripts/run_infer_encoder_decoder.sh
 1. [v0_baseline README](./projects/encoder_decoder/v0_baseline/README.md)
 2. [训练脚本](./projects/encoder_decoder/v0_baseline/src/train_encoder_decoder.py)
 3. [推理脚本](./projects/encoder_decoder/v0_baseline/src/infer_encoder_decoder.py)
-4. [架构说明](./docs/architecture_notes.md)
-5. [checkpoint 与复现说明](./docs/checkpoint_and_reproducibility.md)
+4. [训练摘要](./projects/encoder_decoder/v0_baseline/logs/train_log_summary.md)
+5. [推理报告](./projects/encoder_decoder/v0_baseline/results/inference_report.md)
+6. [架构说明](./docs/architecture_notes.md)
+7. [checkpoint 与复现说明](./docs/checkpoint_and_reproducibility.md)
 
 后续 Encoder-Decoder 更新会根据实际实验进展补充到对应版本目录中，避免在当前 baseline 阶段提前承诺过多未完成内容。

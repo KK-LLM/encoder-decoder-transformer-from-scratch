@@ -35,6 +35,8 @@ minimal_transformer_en_zh_opus_outputs/tokenizer/
 
 当前脚本不保存 optimizer 状态，不保存 scheduler 状态，也不保存完整 training config 字典。
 
+v0_baseline 已提交 best checkpoint：`checkpoint_epoch_20.pt`（Git LFS）。
+
 ## Loading for Inference
 
 推理脚本会：
@@ -50,5 +52,4 @@ minimal_transformer_en_zh_opus_outputs/tokenizer/
 
 - 当前训练脚本不支持自动续训。
 - 当前 checkpoint 无法精确恢复 optimizer / scheduler 状态。
-- 本轮不提交 `.pt`、`.pth`、`.bin`、`.safetensors` 等权重文件。
-- 当前训练仍在进行中，完整结果应在训练完成后按真实日志补充。
+- checkout 后可加载 model_state_dict 作为继续微调或阶段训练的初始化权重。

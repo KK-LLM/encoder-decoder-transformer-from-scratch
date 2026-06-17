@@ -1,6 +1,18 @@
 # Experiment Notes
 
-本文只记录当前 `v0_baseline` 已确定的信息。当前训练仍在进行中，本轮不提交最终训练结果、完整训练日志、推理样例或权重文件。
+本文记录当前 `v0_baseline` 的实验设计和训练完成后的结果摘要。
+
+## Training Result Summary
+
+| 指标 | 值 |
+|---|---|
+| epochs | 48 |
+| best valid_loss | 3.4693（epoch 20） |
+| train_loss at epoch 20 | 3.2443 |
+| overfitting | epoch 20 后 valid_loss 波动上升 |
+| best checkpoint | `checkpoint_epoch_20.pt` |
+
+完整指标见 [logs/train_metrics.csv](../projects/encoder_decoder/v0_baseline/logs/train_metrics.csv)，训练摘要见 [logs/train_log_summary.md](../projects/encoder_decoder/v0_baseline/logs/train_log_summary.md)。推理结果见 [results/inference_report.md](../projects/encoder_decoder/v0_baseline/results/inference_report.md)。
 
 ## Objective
 
@@ -39,6 +51,4 @@
 
 ## Current Status
 
-当前训练仍在进行中。训练脚本已经支持 train / valid loss 计算和 checkpoint 保存。本轮暂不提交完整训练日志、推理样例和权重文件。
-
-训练完成后的真实结果应按实际日志和推理表现补充到对应版本目录中。
+v0_baseline 训练已完成（48 epoch）。epoch 20 为 valid_loss 全局最低。选择 `checkpoint_epoch_20.pt` 作为 baseline checkpoint。checkpoint/tokenizer/训练日志/推理日志均已提交。

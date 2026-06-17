@@ -1,0 +1,1282 @@
+nohup: ignoring input
+
+
+
+device=cuda
+Using CUDA acceleration: NVIDIA GeForce RTX 5090
+AMP enabled=True, dtype=torch.bfloat16
+train raw samples=500000
+valid raw samples=2000
+base tokenizer=./bert_base_multilingual_cased_tokenizer
+new tokenizer vocab_size=16000
+PAD_ID=0, BOS_ID=2, EOS_ID=3
+tokenized 10000/500000 raw samples | kept=10000
+tokenized 20000/500000 raw samples | kept=20000
+tokenized 30000/500000 raw samples | kept=30000
+tokenized 40000/500000 raw samples | kept=40000
+tokenized 50000/500000 raw samples | kept=50000
+tokenized 60000/500000 raw samples | kept=60000
+tokenized 70000/500000 raw samples | kept=70000
+tokenized 80000/500000 raw samples | kept=80000
+tokenized 90000/500000 raw samples | kept=90000
+tokenized 100000/500000 raw samples | kept=100000
+tokenized 110000/500000 raw samples | kept=109999
+tokenized 120000/500000 raw samples | kept=119998
+tokenized 130000/500000 raw samples | kept=129998
+tokenized 140000/500000 raw samples | kept=139998
+tokenized 150000/500000 raw samples | kept=149998
+tokenized 160000/500000 raw samples | kept=159998
+tokenized 170000/500000 raw samples | kept=169997
+tokenized 180000/500000 raw samples | kept=179996
+tokenized 190000/500000 raw samples | kept=189996
+tokenized 200000/500000 raw samples | kept=199996
+tokenized 210000/500000 raw samples | kept=209996
+tokenized 220000/500000 raw samples | kept=219993
+tokenized 230000/500000 raw samples | kept=229993
+tokenized 240000/500000 raw samples | kept=239992
+tokenized 250000/500000 raw samples | kept=249992
+tokenized 260000/500000 raw samples | kept=259990
+tokenized 270000/500000 raw samples | kept=269989
+tokenized 280000/500000 raw samples | kept=279989
+tokenized 290000/500000 raw samples | kept=289989
+tokenized 300000/500000 raw samples | kept=299989
+tokenized 310000/500000 raw samples | kept=309988
+tokenized 320000/500000 raw samples | kept=319986
+tokenized 330000/500000 raw samples | kept=329985
+tokenized 340000/500000 raw samples | kept=339984
+tokenized 350000/500000 raw samples | kept=349984
+tokenized 360000/500000 raw samples | kept=359983
+tokenized 370000/500000 raw samples | kept=369983
+tokenized 380000/500000 raw samples | kept=379983
+tokenized 390000/500000 raw samples | kept=389983
+tokenized 400000/500000 raw samples | kept=399982
+tokenized 410000/500000 raw samples | kept=409982
+tokenized 420000/500000 raw samples | kept=419982
+tokenized 430000/500000 raw samples | kept=429982
+tokenized 440000/500000 raw samples | kept=439982
+tokenized 450000/500000 raw samples | kept=449982
+tokenized 460000/500000 raw samples | kept=459981
+tokenized 470000/500000 raw samples | kept=469981
+tokenized 480000/500000 raw samples | kept=479981
+tokenized 490000/500000 raw samples | kept=489980
+tokenized 500000/500000 raw samples | kept=499980
+finished tokenization | raw=500000 | kept=499980
+finished tokenization | raw=2000 | kept=2000
+train dataset size=499980
+valid dataset size=2000
+steps per epoch=1786
+model config | d_model=512, d_ff=2048, heads=8, layers=8, dropout=0.1, vocab_size=16000, batch_size=280, max_len=(96, 96)
+epoch=1 | train_loss=5.9811 | valid_loss=4.5595 | lr=0.00048036
+EN: I love machine-learning.
+ZH: 我 是 个 女 孩
+EN: Please close the door.
+ZH: 快 走 吧
+EN: I need a cup of coffee.
+ZH: 我 不 能 让 我 的
+EN: She forgot to bring her notebook.
+ZH: 她 不 会 让 她 的
+EN: The meeting starts at nine tomorrow.
+ZH: 上 午 3 时 间
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 可 能 的 一 个 一 个 可 能 的
+EN: We need more clean data.
+ZH: 我 们 不 能 在 这 里
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 不 要 看 到 我 的
+EN: The encoder reads the English sentence.
+ZH: 第 二 章 ：
+EN: Save the checkpoint after each epoch.
+ZH: 这 是 一 个 小 时 间 的 一 个 一 个 一 个
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 不 知 道 你 知 道 你 知 道 你 知 道 你 知 道 你 知 道 我 们 知 道
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 不 能 在 这 里 ， 我 们 在 这 里 ， 我 们 在 这 里
+epoch=2 | train_loss=4.3451 | valid_loss=4.0431 | lr=0.00073945
+EN: I love machine-learning.
+ZH: 我 知 道 的 是 我 的 学 习
+EN: Please close the door.
+ZH: 来 吧 ， 请 走
+EN: I need a cup of coffee.
+ZH: 我 要 去 拿 点 钱
+EN: She forgot to bring her notebook.
+ZH: 她 不 是 她 的 名 字
+EN: The meeting starts at nine tomorrow.
+ZH: 下 午 10 时 至 下 午 10 时 ， 会 议 开 始 。
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 新 的 电 脑
+EN: We need more clean data.
+ZH: 我 们 需 要 进 一 步 的 时 候
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 不 能 等 一 下
+EN: The encoder reads the English sentence.
+ZH: 这 些 书 面 是 一 个 单 独 的 。
+EN: Save the checkpoint after each epoch.
+ZH: - 这 是 一 个 小 时 的 地 方
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 们 不 能 让 我 们 知 道
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 们 今 晚 就 是 在 这 里
+epoch=3 | train_loss=4.0048 | valid_loss=3.8334 | lr=0.00060376
+EN: I love machine-learning.
+ZH: 我 喜 欢 你 的 小 学
+EN: Please close the door.
+ZH: 把 她 放 下
+EN: I need a cup of coffee.
+ZH: 我 可 以 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 没 有 见 过 她 的 母 亲
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 下 午 1 时 30 分 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 很 多 的 演 奏
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 技 术 能 力 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 等 ， 我 明 天 等 待 你
+EN: The encoder reads the English sentence.
+ZH: 在 这 个 时 间 内 ， 将 刊 登 在 第 二 十 六 条 中 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 在 这 里 都 在 这 里
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 想 我 想 要 你 的 帮 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 晚 晚 上 就 回 来 了
+epoch=4 | train_loss=3.8329 | valid_loss=3.7286 | lr=0.00052287
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 小 小 孩
+EN: Please close the door.
+ZH: 把 门 放 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 了 她 的 记 录
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 早 上 开 始
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 新 的 电 子 版 本 。
+EN: We need more clean data.
+ZH: 我 们 需 要 一 些 技 术 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 等 等 等 等 等 等 等 等 等 等 等 等 等 等 等
+EN: The encoder reads the English sentence.
+ZH: [ 原 文 见 下 文 第 2 段 ]
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 会 在 这 里 找 到 一 个 人
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 帮 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 们 今 晚 就 会 回 来 的
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_4.pt
+epoch=5 | train_loss=3.7281 | valid_loss=3.6466 | lr=0.00046767
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 大 学
+EN: Please close the door.
+ZH: 把 她 放 下
+EN: I need a cup of coffee.
+ZH: 我 们 需 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 从 没 读 过 她 的 书
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 上 午 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 很 大 的 方 法 。
+EN: We need more clean data.
+ZH: 我 们 需 要 一 些 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 会 等 你 一 下 ， 我 会 等 到 一 下
+EN: The encoder reads the English sentence.
+ZH: 本 文 件 的 目 的 是 使 用 文 件 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 要 去 找 到 一 个 人
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 想 要 什 么
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 们 今 晚 就 会 回 来 的
+epoch=6 | train_loss=3.6527 | valid_loss=3.6070 | lr=0.00042692
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 校
+EN: Please close the door.
+ZH: 等 一 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 上 午 开 始 了
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 很 好 的 计 划
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时 后 就 去 看 看
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 的 内 容
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 要 去 找 医 生
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 需 要 帮 忙 ， 我 需 要 帮 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 要 回 去 了 ， 亲 爱 的
+epoch=7 | train_loss=3.5929 | valid_loss=3.5656 | lr=0.00039525
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 大 学
+EN: Please close the door.
+ZH: 坐 下 ， 坐 下
+EN: I need a cup of coffee.
+ZH: 我 需 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 上 午 10 时 在 纽 约
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 ， 一 个 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 一 个 数 据 库 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时 我 就 会 回 来 的
+EN: The encoder reads the English sentence.
+ZH: 页 ： 1
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 要 去 找 医 生
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 需 要 你 帮 我 找 个 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 不 会 再 来 这 里 了 ， 我 会 回 来 的
+epoch=8 | train_loss=3.5438 | valid_loss=3.5457 | lr=0.00036973
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 大 型 的 小 型 的 小 型 的
+EN: Please close the door.
+ZH: 等 一 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 没 有 记 录 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 下 午 3 时 在 第 2 会 议 室 举 行
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 一 个 数 据 库 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 要 去 等 一 下 ， 我 会 去 的
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 ， 其 中 英 文 本 为 原 文 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 会 在 这 里 找 到 一 个 报 告
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 我 们 可 以 帮 助 你
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 会 再 来 了
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_8.pt
+epoch=9 | train_loss=3.5006 | valid_loss=3.5248 | lr=0.00034858
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 小 小 小 小 小 小 的
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 她 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 简 单 的 方 法 。
+EN: We need more clean data.
+ZH: 我 们 需 要 一 些 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 着 一 个 小 时 后 我 就 回 来
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 的 内 容 如 下 ：
+EN: Save the checkpoint after each epoch.
+ZH: 我 们 要 去 查 查 查 查 查 查 查 查 查
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 帮 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 要 去 了 ， 亲 爱 的
+epoch=10 | train_loss=3.4635 | valid_loss=3.5161 | lr=0.00033069
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 小 小 小 型 的 音 乐
+EN: Please close the door.
+ZH: 坐 下 来
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 早 上 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 简 单 的 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 分 钟 ， 我 会 等 你
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 是 英 文 本
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 会 有 人 在 医 院 找 到
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 想 知 道 我 们 能 帮 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 要 去 了 ， 我 不 会 再 见 你 了
+epoch=11 | train_loss=3.4310 | valid_loss=3.5006 | lr=0.00031530
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 小 小 小 的 小 小 小 小 小 的
+EN: Please close the door.
+ZH: - 你 们 等 一 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 等 ， 我 只 是 一 分 钟 。
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 的 内 容
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 会 找 到 一 个 医 生
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 能 帮 我 找 到 什 么
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 要 去 了 ， 我 不 会 再 有 事 了
+epoch=12 | train_loss=3.4021 | valid_loss=3.4938 | lr=0.00030188
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生 物 学
+EN: Please close the door.
+ZH: 坐 下 ， 等 一 下
+EN: I need a cup of coffee.
+ZH: 我 要 去 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 在 我 的 书 上 等 着
+EN: The meeting starts at nine tomorrow.
+ZH: 上 午 10 时 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 着 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: " 在 英 文 的 英 文 "
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 会 在 这 里 待 在 这 里
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 想 知 道 你 能 帮 我 一 个 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 要 去 了 ， 亲 爱 的 ， 我 不 会 再 做 一 个 人 了
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_12.pt
+epoch=13 | train_loss=3.3764 | valid_loss=3.4845 | lr=0.00029004
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 高 中 生 物 学
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 写 了 一 封 信
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 语 的 语 言
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 要 去 找 到 的
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 告 诉 你 ， 我 可 以 帮 你
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 会 再 和 你 一 起 吃 饭 的
+epoch=14 | train_loss=3.3524 | valid_loss=3.4776 | lr=0.00027949
+EN: I love machine-learning.
+ZH: 我 喜 欢 一 个 大 型 的 科 学 家
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 她 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 拟 器 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 我 一 分 钟 后 就 回 来
+EN: The encoder reads the English sentence.
+ZH: 英 文 本
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 会 在 这 里 找 到 一 个 报 告
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 帮 我 做 什 么 我 可 以 做 些 什 么
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 不 会 回 来 的 ， 亲 爱 的 ， 我 会 回 来 的
+epoch=15 | train_loss=3.3309 | valid_loss=3.4750 | lr=0.00027001
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 校
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 写 了 我 的 书
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 分 钟 ， 我 就 能 回 来
+EN: The encoder reads the English sentence.
+ZH: 英 语 的 英 语
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 会 在 这 里 找 到 一 个 报 告
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 们 要 怎 么 做 我 可 以 帮 你 们
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 不 会 让 你 今 晚 的 生 活 成 为 一 个 好 的 家 伙
+epoch=16 | train_loss=3.3113 | valid_loss=3.4777 | lr=0.00026144
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习 的
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 咖 啡 。
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 我 的 手 机
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 我 一 分 钟 ， 等 一 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 的 内 容
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 会 有 人 在 监 视 下
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 告 诉 你 ， 如 果 你 知 道 我 的 事 情 ， 我 可 以 做 。
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 们 一 起 回 家 ， 亲 爱 的 ， 我 不 想 再 见 到 你 了
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_16.pt
+epoch=17 | train_loss=3.2930 | valid_loss=3.4752 | lr=0.00025363
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 校
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 还 记 得 我 的 车 。
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会 。
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: " 我 的 英 文 " 是 指 的
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 会 有 人 在 监 视 下
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 要 知 道 你 要 怎 么 做
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 会 再 有 事 了
+epoch=18 | train_loss=3.2755 | valid_loss=3.4756 | lr=0.00024648
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生 物 学
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 记 录
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 微 型 电 池 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: 英 语 是 英 语
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 在 等 着 我 们
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 帮 你 找 到 它
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 们 会 很 快 回 来 的 ， 亲 爱 的
+epoch=19 | train_loss=3.2597 | valid_loss=3.4781 | lr=0.00023991
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 只 是 一 分 钟 后 就 到 了
+EN: The encoder reads the English sentence.
+ZH: 英 文 版 本 的 内 容 如 下 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 会 在 下 午 的 时 候 找 到
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 不 知 道 你 想 要 什 么 ， 我 可 以 帮 你
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 就 不 会 去 了
+epoch=20 | train_loss=3.2443 | valid_loss=3.4693 | lr=0.00023383
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习 的 学 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会 。
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 是 一 个 正 确 的 文 本 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 会 有 人 在 医 院 找 到
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 想 知 道 你 能 不 能 帮 我
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 要 回 家 了
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_20.pt
+epoch=21 | train_loss=3.2302 | valid_loss=3.4744 | lr=0.00022820
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 生
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 我 的 车 。
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 是 一 场 公 开 的 会 议
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 很 简 单 的 方 法 。
+EN: We need more clean data.
+ZH: 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 中 的 一 部 分 是 英 文 本
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 在 监 视 我 们
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 帮 我 一 下
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 会 回 家 的 ， 亲 爱 的 ， 我 不 想 再 这 样 了
+epoch=22 | train_loss=3.2169 | valid_loss=3.4824 | lr=0.00022295
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 生
+EN: Please close the door.
+ZH: 请 坐 下 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 刚 刚 给 我 读 了 她 的 书
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 气 象 学 的 开 发 计 划 。
+EN: We need more clean data.
+ZH: 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 到 我 们 一 分 钟 后 就 到
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 可 以 翻 译 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 在 找 到 一 个 报 告 器
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 告 诉 你 ， 如 果 我 需 要 你 的 帮 助
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 不 会 回 来 的 ， 亲 爱 的 ， 我 们 一 定 要 迟 到 了
+epoch=23 | train_loss=3.2036 | valid_loss=3.4741 | lr=0.00021805
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 我 的 车 。
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 超 级 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 可 以 更 正 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 在 找 搜 查 尸 体
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做 我 不 想 要
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 要 回 家 了
+epoch=24 | train_loss=3.1911 | valid_loss=3.4914 | lr=0.00021346
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 刚 刚 忘 了 她 的 名 字
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 网 络 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟 ， 等 等
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 中 的 一 部 分
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 会 在 下 午 进 行 检 查
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 告 诉 你 ， 如 果 你 需 要 我 的 帮 助 。
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 会 有 事 的 ， 我 会 回 来 的
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_24.pt
+epoch=25 | train_loss=3.1795 | valid_loss=3.4908 | lr=0.00020915
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 我 的 车 。
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 下 午
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 10 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 可 以 翻 译 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 我 们 去 找 一 个 人
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做 我 可 以 帮 你
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 会 回 来 的 ， 亲 爱 的 ， 我 不 会 再 担 心 的
+epoch=26 | train_loss=3.1682 | valid_loss=3.4957 | lr=0.00020509
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 去 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 录
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 下 午
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 计 算 机 的 开 始 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟 ， 我 就 打 给 你
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文 是 英 文
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 我 们 都 去 找 他 们 的 地 方
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做 我 不 能 帮 你
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 天 就 要 回 家 了 ， 不 要 担 心 我
+epoch=27 | train_loss=3.1568 | valid_loss=3.4965 | lr=0.00020125
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 网 络 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 分 钟 ， 我 就 走 了
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 中 的 英 文 本
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 会 有 人 在 医 院 看 到
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 做 什 么 我 可 以 帮 你
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 就 要 回 家 了
+epoch=28 | train_loss=3.1469 | valid_loss=3.5013 | lr=0.00019763
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 学 学 学 学
+EN: Please close the door.
+ZH: 请 坐 下 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 电 视 节 目 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 的 内 容
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 在 监 视 着 我
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 想 知 道 你 要 怎 么 做 我 不 想 要
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 要 回 家 了 ， 我 不 想 再 去 了
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_28.pt
+epoch=29 | train_loss=3.1367 | valid_loss=3.5030 | lr=0.00019419
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 习 私 人 学 校
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 特 儿 的 电 视 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 中 的 一 部 分
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 我 们 都 去 找 他 们 的 尸 体
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做 我 可 以 帮 你
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 想 回 家 了 ， 亲 爱 的
+epoch=30 | train_loss=3.1273 | valid_loss=3.4950 | lr=0.00019093
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 记 得 我 的 车 。
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 的 电 流 系 统 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 中 的 英 文 本 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 在 寻 找 一 个 医 生
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做 我 们 要 去 找 谁
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 要 去 和 你 们 一 起 吃 饭
+epoch=31 | train_loss=3.1187 | valid_loss=3.5044 | lr=0.00018782
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 始 了
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 很 大 的 电 影 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 等 ， 我 一 分 钟 内 就 到
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 中 的 一 部 分
+EN: Save the checkpoint after each epoch.
+ZH: 每 天 晚 上 都 要 找 到 一 个 保 护 区
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 告 诉 你 ， 如 果 我 需 要 它 ， 我 知 道 。
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 能 再 回 家 了
+epoch=32 | train_loss=3.1097 | valid_loss=3.5089 | lr=0.00018486
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 带 我 去 看 她 的 记 录
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 是 一 个 明 天 。
+EN: This is a small Transformer model.
+ZH: - 这 是 一 个 超 级 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 一 些 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 等 ， 我 一 分 钟 就 到 了
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 有 人 在 医 院 里 找 到
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 可 以 告 诉 你 ， 如 果 我 能 帮 你 ， 那 就 好 了
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 要 回 家 了 ， 不 要 再 担 心 了
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_32.pt
+epoch=33 | train_loss=3.1014 | valid_loss=3.5052 | lr=0.00018204
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 去 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: - 这 是 一 个 很 大 的 电 影 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时 ， 等 一 下
+EN: The encoder reads the English sentence.
+ZH: 英 文 本
+EN: Save the checkpoint after each epoch.
+ZH: 每 个 人 都 在 找 食 物
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 们 可 以 帮 你 找 到 一 个 可 以 解 决 的 地 方
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 能 再 担 心 了
+epoch=34 | train_loss=3.0930 | valid_loss=3.5190 | lr=0.00017934
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 下 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 带 我 去 看 她 的
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 等 ， 我 等 了 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 在 找 到 他 们
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 帮 我 们
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 不 能 回 来 了
+epoch=35 | train_loss=3.0848 | valid_loss=3.5195 | lr=0.00017676
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 带 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 电 视 节 目 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 分 钟 ， 我 会 带 你 去
+EN: The encoder reads the English sentence.
+ZH: 英 文 本
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 在 监 视 着 他 们
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 们 可 以 帮 你 们 一 些 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 能 再 来 了 ， 亲 爱 的
+epoch=36 | train_loss=3.0765 | valid_loss=3.5307 | lr=0.00017429
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 上 午 10 时 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 微 型 星 系 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 我 一 下 ， 我 们 一 分 钟 后 就 到
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 已 改 为 英 文
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 要 去 医 院
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 想 知 道 你 们 为 什 么 要 帮 我
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 会 回 来 的 ， 亲 爱 的
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_36.pt
+epoch=37 | train_loss=3.0692 | valid_loss=3.5253 | lr=0.00017192
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 五 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 有 人 在 监 狱 里 找 到 他
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做 我 不 想 让 他 们 帮 忙
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 就 不 会 回 家 了
+epoch=38 | train_loss=3.0618 | valid_loss=3.5171 | lr=0.00016964
+EN: I love machine-learning.
+ZH: 我 喜 欢 学 学
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 她 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 超 级 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 应 改 为 英 文 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 我 们 都 去 找 他
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 不 知 道 你 要 怎 么 做
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 要 去 救 你 ， 不 要 担 心
+epoch=39 | train_loss=3.0547 | valid_loss=3.5368 | lr=0.00016745
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 稍 等
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 计 算 机 的 开 始 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 副 本
+EN: Save the checkpoint after each epoch.
+ZH: 每 天 早 上 都 要 去 找 医 生
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 们 可 以 帮 你 ， 我 知 道 我 有 事 要 做
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 就 会 回 来 的 ， 亲 爱 的
+epoch=40 | train_loss=3.0475 | valid_loss=3.5418 | lr=0.00016535
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 计 算 机 的 一 部 分 。
+EN: We need more clean data.
+ZH: 需 要 更 多 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 中 的 一 部 分
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 在 寻 找 一 个 安 全 的 地 方
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 就 要 回 家 了
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_40.pt
+epoch=41 | train_loss=3.0411 | valid_loss=3.5404 | lr=0.00016332
+EN: I love machine-learning.
+ZH: 我 是 学 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 带 我 的 手 机
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 计 算 机 。
+EN: We need more clean data.
+ZH: 需 要 更 多 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文 ：
+EN: Save the checkpoint after each epoch.
+ZH: 我 们 要 去 看 看 他 的 死 亡 计 划
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 帮 我 做 什 么
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 就 要 回 家 了
+epoch=42 | train_loss=3.0341 | valid_loss=3.5585 | lr=0.00016136
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 稍 等
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 记 忆
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文 是 正 式 语 文 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 要 找 到 克 里 斯 托 弗 的 尸 体
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 怎 么 做 我 也 不 想 让 你 知 道
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 天 就 要 回 家 了 ， 不 要 担 心
+epoch=43 | train_loss=3.0280 | valid_loss=3.5524 | lr=0.00015947
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 科 技
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 带 我 的 照 片
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 的 内 容
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 会 有 人 进 入 保 险 箱
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 们 可 以 帮 忙 ， 但 我 知 道 你 想 要 什 么
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 就 要 回 家 了
+epoch=44 | train_loss=3.0214 | valid_loss=3.5682 | lr=0.00015765
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 很 好 的 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文 是 英 文 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 在 寻 找 食 物
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 帮 我
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 会 回 来 的 ， 我 想 要 一 个 人 去
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_44.pt
+epoch=45 | train_loss=3.0149 | valid_loss=3.5540 | lr=0.00015589
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 科 学
+EN: Please close the door.
+ZH: 请 坐 。
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 记 录
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 这 些 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 十 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 的 英 文 稿
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 我 们 从 监 狱 回 来
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 知 道 你 要 帮 我 们
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 要 去 救 你 ， 不 是 吗 ？
+epoch=46 | train_loss=3.0099 | valid_loss=3.5452 | lr=0.00015419
+EN: I love machine-learning.
+ZH: 我 是 个 好 学 生
+EN: Please close the door.
+ZH: 请 坐 下
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 两 分 钟
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 原 文
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 有 人 在 监 视 我 们
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 们 可 以 帮 你 ， 但 我 不 想 知 道
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 天 我 要 去 救 她 了 ， 再 见
+epoch=47 | train_loss=3.0039 | valid_loss=3.5578 | lr=0.00015254
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 中 生
+EN: Please close the door.
+ZH: 请 稍 等
+EN: I need a cup of coffee.
+ZH: 我 要 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 名 字
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 模 型 。
+EN: We need more clean data.
+ZH: 我 们 需 要 更 多 的 数 据 。
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 我 等 了 一 个 小 时 ， 我 会 等 到 明 天 。
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 正 在 译 成 英 文 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 都 在 找 到 石 头
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 想 知 道 你 们 是 否 能 帮 助 我
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 今 晚 我 会 回 来 的 ， 不 是 吗 ？
+epoch=48 | train_loss=2.9984 | valid_loss=3.5653 | lr=0.00015094
+EN: I love machine-learning.
+ZH: 我 喜 欢 高 科 技
+EN: Please close the door.
+ZH: 请 稍 等
+EN: I need a cup of coffee.
+ZH: 我 要 喝 咖 啡
+EN: She forgot to bring her notebook.
+ZH: 她 忘 了 我 的 电 话
+EN: The meeting starts at nine tomorrow.
+ZH: 明 天 开 会
+EN: This is a small Transformer model.
+ZH: 这 是 一 个 很 有 趣 的 计 算 机 。
+EN: We need more clean data.
+ZH: 我 们 需 要 数 据
+EN: I'll be there in about ten minutes, just wait for me.
+ZH: 等 等 ， 我 一 小 时 内 就 到 了
+EN: The encoder reads the English sentence.
+ZH: 英 文 本 正 式 译 成 英 文 。
+EN: Save the checkpoint after each epoch.
+ZH: 每 次 我 们 从 事 一 项 紧 急 工 作 的 时 候 都 会 到 达 保 安 厅
+EN: Let me know if there's anything else I can help you with.
+ZH: 我 们 可 以 告 诉 你 ， 我 知 道 ， 我 需 要 什 么
+EN: To be honest, I'd rather stay home than go out tonight.
+ZH: 我 今 晚 不 会 再 有 人 陪 我 去
+saved checkpoint to minimal_transformer_en_zh_opus_outputs/checkpoint_epoch_48.pt
+saved final model to minimal_transformer_en_zh_opus_outputs/final_model.pt
+saved tokenizer to minimal_transformer_en_zh_opus_outputs/tokenizer

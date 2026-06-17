@@ -24,6 +24,13 @@ __pycache__/
 *token*
 *secret*
 
+# Allow tracked tokenizer directories
+!projects/encoder_decoder/v0_baseline/tokenizer/
+!projects/encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/
+!projects/encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/**
+!projects/encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/
+!projects/encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/**
+
 # Model weights and checkpoints
 *.pt
 *.pth
@@ -78,3 +85,11 @@ wandb/
 # Archives and temporary files
 *.tgz
 .data
+
+# --- Allow v0_baseline checkpoint, logs, results and trained tokenizer ---
+!projects/encoder_decoder/v0_baseline/checkpoints/
+!projects/encoder_decoder/v0_baseline/checkpoints/*.pt
+!projects/encoder_decoder/v0_baseline/logs/
+!projects/encoder_decoder/v0_baseline/logs/**
+!projects/encoder_decoder/v0_baseline/results/
+!projects/encoder_decoder/v0_baseline/results/**

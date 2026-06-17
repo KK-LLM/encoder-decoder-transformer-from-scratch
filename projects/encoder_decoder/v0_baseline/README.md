@@ -1,6 +1,6 @@
 # Encoder-Decoder Transformer v0_baseline
 
-`v0_baseline` 是手写 Transformer Encoder-Decoder 的 baseline 版本，任务是英文到中文单向机器翻译。该版本重点展示模型源码、训练闭环、推理闭环、tokenizer 训练与 checkpoint 保存机制。
+`v0_baseline` 是手写 Transformer Encoder-Decoder 的 baseline 版本，任务是英文到中文单向机器翻译。该版本重点展示模型源码、训练闭环、推理闭环、tokenizer 训练与 checkpoint 保存机制。v0_baseline 训练已完成，已提交 checkpoint、训练日志、推理日志、固定测试集分析和错误分析。
 
 ## Task
 
@@ -16,10 +16,12 @@
 | 文件 | 说明 |
 |------|------|
 | [src/train_encoder_decoder.py](./src/train_encoder_decoder.py) | 手写模型源码 + 训练闭环 |
-| [src/infer_encoder_decoder.py](./src/infer_encoder_decoder.py) | 手写模型源码 + 推理闭环 |
+| `src/infer_encoder_decoder.py` | 手写模型源码 + 推理闭环 |
 | [data/sample_data.jsonl](./data/sample_data.jsonl) | 200 条真实中英样例 |
 | [tokenizer/README.md](./tokenizer/README.md) | tokenizer 使用说明 |
 | [checkpoints/README.md](./checkpoints/README.md) | checkpoint 保存与当前限制 |
+| [logs/](./logs/) | 训练与推理量化数据 |
+| [results/](./results/) | 训练与推理分析报告 |
 
 ## Model Configuration
 
@@ -71,6 +73,14 @@ tokenizer/bert_base_multilingual_cased_tokenizer/
 
 脚本会基于该 tokenizer 和训练语料重新训练一个 16000 vocab tokenizer。源语言和目标语言共用 tokenizer。`PAD_ID`、`BOS_ID`、`EOS_ID` 在脚本中从 tokenizer 动态读取，其中 BOS 使用 `[CLS]`，EOS 使用 `[SEP]`。
 
+训练完成后生成的 tokenizer 已上传至：
+
+```text
+tokenizer/trained_tokenizer_16000/
+```
+
+该 tokenizer 与 `checkpoints/checkpoint_epoch_20.pt` 配套使用，不可混用 base tokenizer 直接推理。
+
 ## Dataset
 
 完整数据集位于：
@@ -95,6 +105,16 @@ data/opus100_en_zh_local/
 - `final_model.pt`，训练结束保存
 - `tokenizer/`，随 checkpoint 输出保存
 
+v0_baseline 训练完成后已提交 best checkpoint：
+
+```text
+checkpoints/checkpoint_epoch_20.pt
+```
+
+选择依据：valid_loss 在 epoch 20 达到全局最低（3.4693）。
+
+该 checkpoint 文件（338MB）使用 Git LFS 管理，下载前需安装 `git-lfs`。
+
 当前 checkpoint 只包含：
 
 ```python
@@ -104,25 +124,31 @@ data/opus100_en_zh_local/
 }
 ```
 
-当前脚本不保存 optimizer / scheduler 状态，不支持自动续训。本轮不提交真实权重文件。
+当前脚本不保存 optimizer / scheduler 状态，不支持自动续训。
 
 ## Inference
 
-推理脚本支持加载训练输出目录中的 tokenizer 和 checkpoint，构造 `src_mask` / `tgt_mask`，并执行 greedy decode。由于训练仍在进行中，本轮不提交推理日志、推理样例或效果结论。
+推理脚本支持加载训练输出目录中的 tokenizer 和 checkpoint，构造 `src_mask` / `tgt_mask`，并执行 greedy decode。v0_baseline 训练完成后使用 `checkpoint_epoch_20.pt` + `trained_tokenizer_16000/` 执行了完整推理评估，包含：
+
+- train / validation / test 抽样推理（250 条）
+- fixed_simple / fixed_terms / fixed_logic 固定测试（55 条）
+- 人工复核后的错误类型分析
+
+详见 [results/inference_report.md](./results/inference_report.md) 和 [results/inference_examples.md](./results/inference_examples.md)。
 
 ## Current Training Status
 
-当前训练仍在进行中。本轮提交只展示 baseline 版本的结构、代码和说明，不写最终训练结果、不写最佳 epoch、不写 best valid loss、不写 BLEU / chrF、不写推理效果结论。
+v0_baseline 训练已完成（48 epoch）。valid_loss 在 epoch 20 达到最低（3.4693），此后出现 overfitting 趋势。完整指标见 [logs/train_metrics.csv](./logs/train_metrics.csv)，训练摘要见 [logs/train_log_summary.md](./logs/train_log_summary.md)。
 
 ## Limitations
 
 1. 当前版本是 `v0_baseline`，主要用于展示完整 Encoder-Decoder Transformer pipeline。
-2. 当前训练仍在进行中，本轮不提交训练日志、推理日志、推理样例和 checkpoint。
-3. 当前不提供最终训练指标和翻译质量结论。
-4. 推理脚本当前使用 greedy decode。
-5. 模型源码内嵌在 train / infer 脚本中，未拆分为独立 `model.py`。
-6. checkpoint 当前只保存 `epoch` 和 `model_state_dict`，不保存 optimizer / scheduler 状态，不支持自动续训。
-7. 当前版本更强调完整 pipeline 和源码可读性，而不是最终翻译效果最优。
+2. 当前不提供 BLEU / chrF 等自动评测指标，推理使用 greedy decode。
+3. 推理脚本当前使用 greedy decode。
+4. 模型源码内嵌在 train / infer 脚本中，未拆分为独立 `model.py`。
+5. checkpoint 当前只保存 `epoch` 和 `model_state_dict`，不保存 optimizer / scheduler 状态，不支持自动续训。
+6. 当前版本更强调完整 pipeline 和源码可读性，而不是最终翻译效果最优。
+7. 在 OPUS-100 UN 语体内模型可生成流畅中文，但技术术语和日常英语泛化能力受限。
 
 ## Run
 

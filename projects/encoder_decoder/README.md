@@ -4,6 +4,6 @@
 
 | 版本 | 目录 | 状态 |
 |------|------|------|
-| v0_baseline | [v0_baseline/](./v0_baseline/) | 训练进行中 |
+| v0_baseline | [v0_baseline/](./v0_baseline/) | 训练已完成 |
 
 当前仓库不包含 Decoder-only from scratch。Decoder-only 后续会单独新建仓库，不属于当前 Encoder-Decoder 仓库。

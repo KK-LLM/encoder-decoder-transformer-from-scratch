@@ -1,0 +1,19 @@
+Term                           Tokens                                             Count
+------------------------------------------------------------------------------------------
+loss                           ['loss']                                           1
+training loss                  ['training', 'loss']                               2
+validation loss                ['valid', '##ation', 'loss']                       3
+machine learning               ['mach', '##ine', 'learning']                      3
+deep learning                  ['deep', 'learning']                               2
+Transformer                    ['Trans', '##form', '##er']                        3
+encoder                        ['enc', '##ode', '##r']                            3
+decoder                        ['dec', '##ode', '##r']                            3
+checkpoint                     ['check', '##p', '##oint']                         3
+tokenizer                      ['to', '##ken', '##ize', '##r']                    4
+attention                      ['attention']                                      1
+positional encoding            ['position', '##al', 'enc', '##od', '##ing']       5
+learning rate                  ['learning', 'rate']                               2
+batch size                     ['b', '##atch', 'size']                            3
+beam search                    ['be', '##am', 'search']                           3
+greedy decoding                ['gre', '##ed', '##y', 'dec', '##od', '##ing']     6
+OPUS-100                       ['O', '##P', '##U', '##S', '-', '100']             6
