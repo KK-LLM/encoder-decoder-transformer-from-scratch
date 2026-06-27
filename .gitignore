@@ -30,6 +30,10 @@ __pycache__/
 !encoder_decoder/v0_baseline/tokenizer/bert_base_multilingual_cased_tokenizer/**
 !encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/
 !encoder_decoder/v0_baseline/tokenizer/trained_tokenizer_16000/**
+!encoder_decoder/v1_curriculum/tokenizer/
+!encoder_decoder/v1_curriculum/tokenizer/README.md
+!encoder_decoder/v1_curriculum/tokenizer/en_zh_stage_tokenizer_48000/
+!encoder_decoder/v1_curriculum/tokenizer/en_zh_stage_tokenizer_48000/**
 
 # Model weights and checkpoints
 *.pt
@@ -93,3 +97,13 @@ wandb/
 !encoder_decoder/v0_baseline/logs/**
 !encoder_decoder/v0_baseline/results/
 !encoder_decoder/v0_baseline/results/**
+
+# v1 curriculum local outputs and non-uploaded evaluation files
+/outputs/
+/encoder_decoder/v1_curriculum/outputs/
+/encoder_decoder/v1_curriculum/checkpoints/
+/encoder_decoder/v1_curriculum/logs/
+/encoder_decoder/v1_curriculum/results/
+/encoder_decoder/v1_curriculum/data/stage*/test.jsonl
+/encoder_decoder/v1_curriculum/data/**/index_removal_*.jsonl
+/encoder_decoder/v1_curriculum/data/**/index_removal_*.md

@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-06-27T19:23:29",
+  "root": "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627",
+  "output_dir": "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/en_zh_curriculum_v1_optimized_tokenizer_48000",
+  "base_tokenizer_dir": "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/bert_base_multilingual_cased_tokenizer",
+  "vocab_size_requested": 48000,
+  "tokenizer_ids": {
+    "vocab_size": 48000,
+    "pad_id": 0,
+    "unk_id": 1,
+    "bos_id": 2,
+    "eos_id": 3,
+    "mask_id": 4
+  },
+  "special_tokens": {
+    "pad_token": "[PAD]",
+    "unk_token": "[UNK]",
+    "cls_token_as_bos": "[CLS]",
+    "sep_token_as_eos": "[SEP]",
+    "mask_token": "[MASK]"
+  },
+  "training_files": [
+    "stage1/train.jsonl",
+    "stage1/test.jsonl",
+    "stage2/train.jsonl",
+    "stage2/test.jsonl",
+    "stage3/train.jsonl",
+    "stage3/test.jsonl",
+    "stage4/train.jsonl",
+    "stage4/test.jsonl",
+    "stage5/train.jsonl",
+    "stage5/test.jsonl"
+  ],
+  "training_rule": "trained from Stage1-Stage5 train.jsonl and test.jsonl source+target texts",
+  "input_summary": {
+    "total_rows": 1905440,
+    "total_texts": 3810880,
+    "by_file": {
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage1/train.jsonl": {
+        "rows": 107000,
+        "texts": 214000
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage1/test.jsonl": {
+        "rows": 2000,
+        "texts": 4000
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage2/train.jsonl": {
+        "rows": 281681,
+        "texts": 563362
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage2/test.jsonl": {
+        "rows": 6500,
+        "texts": 13000
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage3/train.jsonl": {
+        "rows": 432987,
+        "texts": 865974
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage3/test.jsonl": {
+        "rows": 7444,
+        "texts": 14888
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage4/train.jsonl": {
+        "rows": 503000,
+        "texts": 1006000
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage4/test.jsonl": {
+        "rows": 7300,
+        "texts": 14600
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage5/train.jsonl": {
+        "rows": 548084,
+        "texts": 1096168
+      },
+      "/Users/xulinqing/Pycharm_Project/annotated-transformer-master/curriculum_v1_optimized_final_chosen_0627/stage5/test.jsonl": {
+        "rows": 9444,
+        "texts": 18888
+      }
+    }
+  }
+}
