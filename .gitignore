@@ -107,3 +107,12 @@ wandb/
 /encoder_decoder/v1_curriculum/data/stage*/test.jsonl
 /encoder_decoder/v1_curriculum/data/**/index_removal_*.jsonl
 /encoder_decoder/v1_curriculum/data/**/index_removal_*.md
+
+# --- Allow selected v1_curriculum final checkpoint, inference logs and results ---
+!encoder_decoder/v1_curriculum/checkpoints/
+!encoder_decoder/v1_curriculum/checkpoints/README.md
+!encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.part*.pt
+!encoder_decoder/v1_curriculum/logs/
+!encoder_decoder/v1_curriculum/logs/**
+!encoder_decoder/v1_curriculum/results/
+!encoder_decoder/v1_curriculum/results/**

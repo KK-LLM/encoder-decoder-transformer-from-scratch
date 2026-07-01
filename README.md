@@ -5,7 +5,7 @@
 这个仓库用于整理手写 Encoder-Decoder Transformer 英文到中文翻译项目。当前仓库包含两个连续版本：
 
 - `v0_baseline`：基于 OPUS-100 en-zh 的 baseline 版本，训练已完成，并已提交 checkpoint、训练日志、推理日志和错误分析。
-- `v1_curriculum`：基于 `v0_baseline` 经验重新设计的课程学习版本，已补充 Stage1 到 Stage5 训练记录、V0/V1 对比和指标分析；推理报告、checkpoint 和最终模型分析后续再更新。
+- `v1_curriculum`：基于 `v0_baseline` 经验重新设计的课程学习版本，已补充 Stage1 到 Stage5 训练记录、V0/V1 对比、最终 checkpoint、推理日志和推理分析。
 
 ## Project Overview
 
@@ -25,7 +25,7 @@
 | 项目 | 版本 | 状态 |
 |------|------|------|
 | Encoder-Decoder Transformer | [v0_baseline](./encoder_decoder/v0_baseline/) | 训练已完成，已提交 checkpoint、训练日志和推理分析 |
-| Encoder-Decoder Transformer | [v1_curriculum](./encoder_decoder/v1_curriculum/) | 已提交分阶段训练数据、统一 48k tokenizer、训练脚本和 V1 训练分析文档 |
+| Encoder-Decoder Transformer | [v1_curriculum](./encoder_decoder/v1_curriculum/) | 已提交分阶段训练数据、统一 48k tokenizer、训练/推理脚本、最终 checkpoint 和 V1 训练推理分析文档 |
 
 ## Repository Structure
 
@@ -52,13 +52,18 @@
 │   │   └── results/
 │   └── v1_curriculum/
 │       ├── README.md
+│       ├── checkpoints/
+│       │   ├── README.md
+│       │   ├── checkpoint_best.part00.pt
+│       │   └── checkpoint_best.part01.pt
 │       ├── doc/
 │       │   ├── architecture_notes.md
 │       │   ├── v1_curriculum_training_report.md
 │       │   ├── v1_vs_v0_comparison.md
 │       │   └── v1_training_metrics_summary.md
 │       ├── src/
-│       │   └── train_encoder_decoder_curriculum.py
+│       │   ├── train_encoder_decoder_curriculum.py
+│       │   └── infer_encoder_decoder_curriculum.py
 │       ├── data/
 │       │   ├── README.md
 │       │   ├── final_eval.jsonl
@@ -67,6 +72,15 @@
 │       │   ├── stage3/train.jsonl
 │       │   ├── stage4/train.jsonl
 │       │   └── stage5/train.jsonl
+│       ├── logs/
+│       │   ├── README.md
+│       │   ├── v1_inference_cases.txt
+│       │   ├── v1_inference_log_summary.md
+│       │   └── v1_inference_raw_output.log
+│       ├── results/
+│       │   ├── README.md
+│       │   ├── v1_inference_report.md
+│       │   └── v1_inference_summary.md
 │       └── tokenizer/
 │           ├── README.md
 │           └── en_zh_stage_tokenizer_48000/
@@ -94,16 +108,18 @@ v1 当前提交内容包括：
 - 统一验证集 `final_eval.jsonl`
 - 统一 48,000 vocab tokenizer
 - v1 curriculum 训练脚本
-- V1 主训练报告、V0/V1 对比报告和训练记录与指标分析
+- V1 final best checkpoint 分片文件
+- v1 curriculum 推理脚本
+- V1 主训练报告、V0/V1 对比报告、训练记录与指标分析
+- V1 推理日志、推理报告和推理摘要
 
 v1 当前不提交：
 
 - stage 下的 `test.jsonl`
-- checkpoint
-- 推理报告
-- 完整原始训练日志和推理结果
+- 完整原始训练 raw log
+- 中间阶段 checkpoint
 
-推理报告和最终 checkpoint 会在完成复核后再补充。
+当前推理报告基于最终 checkpoint 的 80 条分类样例输出生成，原始推理输出保留在 `encoder_decoder/v1_curriculum/logs/`。
 
 ## Dataset Work
 
@@ -241,6 +257,20 @@ bash scripts/run_infer_encoder_decoder.sh
 bash scripts/run_train_encoder_decoder_v1_curriculum.sh
 ```
 
+运行 v1 curriculum 推理：
+
+```bash
+cat encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.part00.pt \
+    encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.part01.pt \
+    > encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.pt
+
+python3 encoder_decoder/v1_curriculum/src/infer_encoder_decoder_curriculum.py \
+  --checkpoint encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.pt \
+  --tokenizer-dir encoder_decoder/v1_curriculum/tokenizer/en_zh_stage_tokenizer_48000 \
+  --input-file encoder_decoder/v1_curriculum/logs/v1_inference_cases.txt \
+  --batch-size 16
+```
+
 ## Notes for Reviewers
 
 推荐阅读路径：
@@ -256,5 +286,9 @@ bash scripts/run_train_encoder_decoder_v1_curriculum.sh
 9. [v1 主训练报告](./encoder_decoder/v1_curriculum/doc/v1_curriculum_training_report.md)
 10. [v1 与 v0 对比报告](./encoder_decoder/v1_curriculum/doc/v1_vs_v0_comparison.md)
 11. [v1 训练记录与指标分析](./encoder_decoder/v1_curriculum/doc/v1_training_metrics_summary.md)
+12. [v1 checkpoint 说明](./encoder_decoder/v1_curriculum/checkpoints/README.md)
+13. [v1 推理脚本](./encoder_decoder/v1_curriculum/src/infer_encoder_decoder_curriculum.py)
+14. [v1 推理报告](./encoder_decoder/v1_curriculum/results/v1_inference_report.md)
+15. [v1 推理日志摘要](./encoder_decoder/v1_curriculum/logs/v1_inference_log_summary.md)
 
 后续 Encoder-Decoder 更新会根据真实训练进展补充到对应版本目录中，避免提前承诺尚未完成的训练结果。

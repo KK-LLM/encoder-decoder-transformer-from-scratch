@@ -1,0 +1,80 @@
+the girl opened the window yesterday.
+please close the door before dinner.
+my brother put the notebook on the desk this morning.
+the teacher will bring the book to the classroom tomorrow.
+she drinks a cup of coffee in the kitchen every morning.
+the waiter did not open the window in the room today.
+my friend needs a laptop for work next week.
+the man moved the chair near the table after lunch.
+please give this book to your sister tonight.
+the child will read the story in the room after school.
+For many students, regular practice is more useful than a long review before the exam.
+The company changed its plan after the team received new feedback from users.
+A clear explanation can help readers understand a difficult topic more quickly.
+The report describes how small changes in daily habits can improve health over time.
+Many people depend on public services when life becomes difficult.
+The city built a new library to give local families a quiet place to study.
+Good communication can reduce misunderstanding between different teams.
+The project became easier after the manager divided the work into smaller parts.
+This article explains why clean data is important for reliable analysis.
+The meeting ended early because everyone had already read the document.
+Because the weather was bad, the workers moved the equipment into the room.
+If you need more information, I can send the report tomorrow.
+When the meeting is over, she will call her parents.
+Although the problem looked simple, the answer was not clear.
+The task was difficult, however the team finished it before Friday.
+If the teacher explains the rule again, the students will understand it better.
+Because the train was late, many people arrived after the meeting started.
+When my sister opened the notebook, she found the letter inside.
+Although he was tired, he closed the window before leaving the room.
+The plan is useful, but it still needs more details.
+The Transformer encoder uses self-attention to read source tokens.
+The tokenizer converts raw text into token ids before training starts.
+A checkpoint stores the model state so training can be restored later.
+The learning rate should be adjusted carefully during long training.
+The decoder generates target tokens based on the encoder output.
+Attention helps the model connect words that are far apart in a sentence.
+The embedding layer maps each token to a dense vector.
+Validation loss is used to compare checkpoints during training.
+The dataset contains English and Chinese sentence pairs.
+The optimizer updates model parameters after each batch.
+If the tokenizer produces unstable token sequences, translation quality may drop.
+Because the checkpoint was saved correctly, the model can resume training from that state.
+When the learning rate is too high, validation loss may become unstable.
+Although the Transformer processes tokens in parallel, long sentences can still be difficult.
+The decoder may generate incomplete output if it predicts the end token too early.
+If attention fails to connect distant tokens, the translation may lose important meaning.
+Because the encoder output contains source-side context, the decoder can follow the input sentence.
+The tokenizer should preserve technical terms, but it also needs to handle ordinary words.
+When validation loss decreases slowly, fixed examples are still useful for checking translation quality.
+Although the dataset is larger, noisy samples can still hurt model behavior.
+Although the validation loss decreased, the model still failed to translate part of the long sentence.
+If a sentence contains several clauses, the decoder must keep both the main idea and the condition.
+When the source sentence mixes technical terms with daily actions, the translation should not ignore either part.
+Because the report was revised after the experiment, the final conclusion became more reliable.
+Although the team improved the tokenizer, rare words were still split into many small pieces.
+If the checkpoint is selected only by training loss, the final model may not generalize well.
+When users ask complex questions, the system should preserve the original meaning instead of generating generic answers.
+Although the first translation was fluent, it missed the reason why the decision was made.
+Because the model learned from mixed data, it should translate both daily sentences and technical sentences.
+If the decoder follows the source sentence poorly, the output may sound natural but contain wrong information.
+open the door today.
+open the window tomorrow.
+close the door tomorrow.
+close the window today.
+the girl read the book in the classroom yesterday.
+the boy put the notebook on the desk this morning.
+the teacher will open the door after class.
+the student will close the window before class.
+the woman moved the book next to the laptop.
+the man moved the laptop next to the book.
+This sentence contains the phrase do not translate, but it still needs a natural Chinese translation.
+The word Transformer should not become an ordinary electrical transformer in this machine learning sentence.
+The tokenizer tokenizer tokenizer sequence should not make the output repeat the same word forever.
+This example is not a rule description; it is just an English sentence that needs translation.
+Please translate the sentence naturally instead of explaining how to translate it.
+The source mentions checkpoint and token, but door and window are still ordinary objects.
+The model should not output phrases like the correct translation is before giving the translation.
+This input checks whether repeated technical words cause repeated Chinese output.
+Although the sentence mentions validation loss, it should not produce a training log explanation.
+The sentence includes encoder, decoder, and a notebook, but it is still one normal sentence.

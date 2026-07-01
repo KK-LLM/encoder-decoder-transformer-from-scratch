@@ -1,0 +1,255 @@
+device=mps
+model_dir=.
+checkpoint=./checkpoint_best.pt
+tokenizer_dir=./en_zh_stage_tokenizer_48000
+Using Apple Silicon MPS acceleration for inference.
+vocab_size=48000
+PAD_ID=0, BOS_ID=2, EOS_ID=3
+loaded checkpoint epoch=99
+checkpoint global_step=394463
+model config | d_model=768, d_ff=3072, heads=12, layers=10, dropout=0.05, vocab_size=48000, max_src_len=96
+model loaded successfully.
+
+===== File Batch Translation =====
+input_file=inference_cases/v1_inference_cases.txt
+sentences=80, batch_size=16
+[1] EN: the girl opened the window yesterday.
+[1] ZH: 女 孩 昨 天 打 开 了 这 扇 窗 户 。
+------------------------------------------------------------
+[2] EN: please close the door before dinner.
+[2] ZH: 请 晚 饭 前 关 上 这 扇 门 。
+------------------------------------------------------------
+[3] EN: my brother put the notebook on the desk this morning.
+[3] ZH: 我 哥 哥 今 天 早 上 把 这 本 笔 记 本 放 在 书 桌 上 。
+------------------------------------------------------------
+[4] EN: the teacher will bring the book to the classroom tomorrow.
+[4] ZH: 老 师 明 天 在 教 室 里 会 带 来 这 张 书 桌 。
+------------------------------------------------------------
+[5] EN: she drinks a cup of coffee in the kitchen every morning.
+[5] ZH: 她 每 天 早 上 在 厨 房 里 喝 一 杯 茶 。
+------------------------------------------------------------
+[6] EN: the waiter did not open the window in the room today.
+[6] ZH: 服 务 员 今 天 晚 上 没 有 打 开 这 扇 窗 户 。
+------------------------------------------------------------
+[7] EN: my friend needs a laptop for work next week.
+[7] ZH: 我 的 朋 友 下 周 需 要 买 这 台 笔 记 本 电 脑 。
+------------------------------------------------------------
+[8] EN: the man moved the chair near the table after lunch.
+[8] ZH: 那 位 男 士 午 饭 后 在 桌 子 旁 打 开 了 这 张 桌 子 。
+------------------------------------------------------------
+[9] EN: please give this book to your sister tonight.
+[9] ZH: 请 你 的 朋 友 今 晚 会 读 这 本 书 。
+------------------------------------------------------------
+[10] EN: the child will read the story in the room after school.
+[10] ZH: 孩 子 上 课 前 会 读 这 张 纸 。
+------------------------------------------------------------
+[11] EN: For many students, regular practice is more useful than a long review before the exam.
+[11] ZH: 在 考 试 中 ， 考 试 的 学 生 比 较 少 ， 而 且 比 较 少 。
+------------------------------------------------------------
+[12] EN: The company changed its plan after the team received new feedback from users.
+[12] ZH: 这 些 新 闻 工 作 人 员 在 开 始 时 提 供 了 一 个 新 的 支 持 。
+------------------------------------------------------------
+[13] EN: A clear explanation can help readers understand a difficult topic more quickly.
+[13] ZH: 读 者 需 要 更 多 的 信 息 ， 这 是 一 个 很 好 的 解 释 。
+------------------------------------------------------------
+[14] EN: The report describes how small changes in daily habits can improve health over time.
+[14] ZH: 这 些 新 的 研 究 表 明 ， 每 天 的 工 作 量 和 压 力 都 会 影 响 到 睡 眠 的 质 量 。
+------------------------------------------------------------
+[15] EN: Many people depend on public services when life becomes difficult.
+[15] ZH: 许 多 人 都 在 努 力 工 作 ， 因 为 他 们 的 生 活 方 式 很 差 。
+------------------------------------------------------------
+[16] EN: The city built a new library to give local families a quiet place to study.
+[16] ZH: 新 的 建 筑 物 ， 让 我 们 的 家 庭 成 为 一 个 新 的 城 市 。
+------------------------------------------------------------
+[17] EN: Good communication can reduce misunderstanding between different teams.
+[17] ZH: 对 于 消 极 的 交 互 式 的 人 ， 有 效 的 反 馈 。
+------------------------------------------------------------
+[18] EN: The project became easier after the manager divided the work into smaller parts.
+[18] ZH: 这 些 工 作 经 常 在 新 的 工 作 中 完 成 。
+------------------------------------------------------------
+[19] EN: This article explains why clean data is important for reliable analysis.
+[19] ZH: 本 文 提 出 了 一 种 基 于 数 据 质 量 的 方 法 。
+------------------------------------------------------------
+[20] EN: The meeting ended early because everyone had already read the document.
+[20] ZH: 会 议 开 始 时 ， 只 有 一 分 短 信 在 会 议 上 。
+------------------------------------------------------------
+[21] EN: Because the weather was bad, the workers moved the equipment into the room.
+[21] ZH: 因 为 天 气 很 好 ， 所 以 工 作 人 员 在 房 间 里 打 电 话 。
+------------------------------------------------------------
+[22] EN: If you need more information, I can send the report tomorrow.
+[22] ZH: 如 果 您 有 任 何 疑 问 ， 我 会 在 下 周 给 您 发 送 消 息 。
+------------------------------------------------------------
+[23] EN: When the meeting is over, she will call her parents.
+[23] ZH: 当 会 议 结 束 后 ， 她 会 和 她 哥 哥 说 话 。
+------------------------------------------------------------
+[24] EN: Although the problem looked simple, the answer was not clear.
+[24] ZH: 虽 然 答 案 很 简 单 ， 但 问 题 很 简 单 。
+------------------------------------------------------------
+[25] EN: The task was difficult, however the team finished it before Friday.
+[25] ZH: 但 是 ， 下 午 的 时 间 是 一 个 考 试 ， 所 以 是 一 个 小 时 。
+------------------------------------------------------------
+[26] EN: If the teacher explains the rule again, the students will understand it better.
+[26] ZH: 如 果 老 师 们 学 会 了 如 何 改 变 教 学 ， 就 会 有 所 改 变 。
+------------------------------------------------------------
+[27] EN: Because the train was late, many people arrived after the meeting started.
+[27] ZH: 因 为 火 车 晚 点 ， 他 们 在 会 议 后 开 始 了 。
+------------------------------------------------------------
+[28] EN: When my sister opened the notebook, she found the letter inside.
+[28] ZH: 玛 丽 在 我 的 笔 记 本 上 找 到 了 她 的 笔 记 本 。
+------------------------------------------------------------
+[29] EN: Although he was tired, he closed the window before leaving the room.
+[29] ZH: 虽 然 他 很 累 ， 他 还 是 会 关 上 门 。
+------------------------------------------------------------
+[30] EN: The plan is useful, but it still needs more details.
+[30] ZH: 这 些 文 件 很 重 要 ， 但 需 要 更 多 的 时 间 。
+------------------------------------------------------------
+[31] EN: The Transformer encoder uses self-attention to read source tokens.
+[31] ZH: Transformer 编 码 器 使 用 注 意 力 掩 码 来 清 楚 表 示 词 序 。
+------------------------------------------------------------
+[32] EN: The tokenizer converts raw text into token ids before training starts.
+[32] ZH: 在 模 型 读 取 文 本 之 前 ， 分 词 器 会 将 原 始 文 本 转 换 为 token id 。
+------------------------------------------------------------
+[33] EN: A checkpoint stores the model state so training can be restored later.
+[33] ZH: checkpoint 保 存 模 型 权 重 ， 使 训 练 之 后 可 以 继 续 。
+------------------------------------------------------------
+[34] EN: The learning rate should be adjusted carefully during long training.
+[34] ZH: 学 习 率 应 该 稳 定 的 学 习 率 调 整 。
+------------------------------------------------------------
+[35] EN: The decoder generates target tokens based on the encoder output.
+[35] ZH: 编 码 器 输 出 会 为 解 码 器 提 供 源 端 上 下 文 ， 这 样 团 队 就 能 稳 定 编 码 器 - 解 码 器 训 练 。
+------------------------------------------------------------
+[36] EN: Attention helps the model connect words that are far apart in a sentence.
+[36] ZH: 注 意 力 层 可 以 帮 助 模 型 连 接 词 表 中 的 词 。
+------------------------------------------------------------
+[37] EN: The embedding layer maps each token to a dense vector.
+[37] ZH: 在 图 像 分 类 中 ， 每 个 嵌 入 层 的 嵌 入 层 。
+------------------------------------------------------------
+[38] EN: Validation loss is used to compare checkpoints during training.
+[38] ZH: 验 证 loss 用 于 监 控 训 练 数 据 集 ， 在 验 证 期 间 。
+------------------------------------------------------------
+[39] EN: The dataset contains English and Chinese sentence pairs.
+[39] ZH: 这 些 数 据 包 含 英 文 和 中 文 。
+------------------------------------------------------------
+[40] EN: The optimizer updates model parameters after each batch.
+[40] ZH: 优 化 器 会 在 最 终 收 束 阶 段 使 用 优 化 器 。
+------------------------------------------------------------
+[41] EN: If the tokenizer produces unstable token sequences, translation quality may drop.
+[41] ZH: 如 果 分 词 器 不 稳 定 ， 翻 译 质 量 可 能 会 下 降 。
+------------------------------------------------------------
+[42] EN: Because the checkpoint was saved correctly, the model can resume training from that state.
+[42] ZH: 因 为 checkpoint 在 训 练 期 间 保 存 ， 它 可 以 在 模 型 checkpoint 中 保 持 术 语 一 致 。
+------------------------------------------------------------
+[43] EN: When the learning rate is too high, validation loss may become unstable.
+[43] ZH: 当 学 习 率 过 高 时 ， 验 证 loss 可 能 会 变 得 不 稳 定 。
+------------------------------------------------------------
+[44] EN: Although the Transformer processes tokens in parallel, long sentences can still be difficult.
+[44] ZH: 虽 然 Transformer 架 构 很 小 ， 但 解 码 器 仍 然 可 以 生 成 稳 定 的 中 文 句 子 。
+------------------------------------------------------------
+[45] EN: The decoder may generate incomplete output if it predicts the end token too early.
+[45] ZH: 如 果 解 码 器 重 复 生 成 token ， 翻 译 可 能 会 变 得 不 稳 定 。
+------------------------------------------------------------
+[46] EN: If attention fails to connect distant tokens, the translation may lose important meaning.
+[46] ZH: 如 果 推 理 使 用 了 错 误 的 checkpoint ， 译 文 可 能 会 不 稳 定 。
+------------------------------------------------------------
+[47] EN: Because the encoder output contains source-side context, the decoder can follow the input sentence.
+[47] ZH: 因 为 编 码 器 先 读 取 源 端 内 容 ， 它 的 表 示 会 影 响 输 入 和 解 码 器 状 态 。
+------------------------------------------------------------
+[48] EN: The tokenizer should preserve technical terms, but it also needs to handle ordinary words.
+[48] ZH: 自 动 化 应 该 是 简 单 的 ， 但 是 应 该 使 用 口 语 来 表 示 文 本 。
+------------------------------------------------------------
+[49] EN: When validation loss decreases slowly, fixed examples are still useful for checking translation quality.
+[49] ZH: 当 验 证 loss 有 噪 声 时 ， 译 文 可 能 保 持 稳 定 。
+------------------------------------------------------------
+[50] EN: Although the dataset is larger, noisy samples can still hurt model behavior.
+[50] ZH: 虽 然 训 练 数 据 有 噪 声 ， 但 模 型 可 能 会 过 拟 合 。
+------------------------------------------------------------
+[51] EN: Although the validation loss decreased, the model still failed to translate part of the long sentence.
+[51] ZH: 虽 然 句 子 较 长 ， 但 验 证 loss 可 能 会 变 得 不 稳 定 ， 在 翻 译 流 程 中 。
+------------------------------------------------------------
+[52] EN: If a sentence contains several clauses, the decoder must keep both the main idea and the condition.
+[52] ZH: 如 果 句 子 有 两 个 分 句 ， 则 应 该 保 留 一 个 句 子 ， 并 且 解 释 句 子 的 含 义 。
+------------------------------------------------------------
+[53] EN: When the source sentence mixes technical terms with daily actions, the translation should not ignore either part.
+[53] ZH: 当 然 ， 这 些 信 息 不 能 被 翻 译 成 是 一 个 新 的 问 题 ， 因 为 它 们 的 翻 译 是 可 以 接 受 的 。
+------------------------------------------------------------
+[54] EN: Because the report was revised after the experiment, the final conclusion became more reliable.
+[54] ZH: 因 此 ， 在 评 估 期 间 ， 他 的 结 论 是 ， 改 进 了 测 试 结 果 。
+------------------------------------------------------------
+[55] EN: Although the team improved the tokenizer, rare words were still split into many small pieces.
+[55] ZH: 虽 然 分 词 器 很 稳 定 ， 但 它 仍 然 可 以 编 码 许 多 小 型 Transformer 样 本 。
+------------------------------------------------------------
+[56] EN: If the checkpoint is selected only by training loss, the final model may not generalize well.
+[56] ZH: 如 果 batch size 过 大 ， 训 练 时 内 存 占 用 可 能 增 加 ， 在 模 型 权 重 稳 定 时 。
+------------------------------------------------------------
+[57] EN: When users ask complex questions, the system should preserve the original meaning instead of generating generic answers.
+[57] ZH: 解 决 方 案 是 一 个 简 单 的 问 题 ， 因 为 它 可 以 使 用 一 个 简 单 的 方 法 来 解 决 问 题 。
+------------------------------------------------------------
+[58] EN: Although the first translation was fluent, it missed the reason why the decision was made.
+[58] ZH: 虽 然 这 个 决 定 很 简 单 ， 但 是 第 二 个 问 题 仍 然 未 知 。
+------------------------------------------------------------
+[59] EN: Because the model learned from mixed data, it should translate both daily sentences and technical sentences.
+[59] ZH: 因 为 数 据 集 较 小 ， 所 以 ， 每 个 epoch 之 后 ， 都 会 影 响 模 型 的 泛 化 。
+------------------------------------------------------------
+[60] EN: If the decoder follows the source sentence poorly, the output may sound natural but contain wrong information.
+[60] ZH: 如 果 解 码 器 重 复 生 成 token ， 翻 译 可 能 会 出 错 ， 但 源 端 表 示 不 会 发 生 变 化 。
+------------------------------------------------------------
+[61] EN: open the door today.
+[61] ZH: 这 扇 门 是 在 门 边 上 的 门 边 上 。
+------------------------------------------------------------
+[62] EN: open the window tomorrow.
+[62] ZH: 请 打 开 这 扇 窗 户 。
+------------------------------------------------------------
+[63] EN: close the door tomorrow.
+[63] ZH: 请 关 上 这 扇 门 。
+------------------------------------------------------------
+[64] EN: close the window today.
+[64] ZH: 这 个 窗 户 今 天 关 上 了 这 扇 窗 户 。
+------------------------------------------------------------
+[65] EN: the girl read the book in the classroom yesterday.
+[65] ZH: 女 孩 昨 天 在 教 室 里 读 这 本 书 。
+------------------------------------------------------------
+[66] EN: the boy put the notebook on the desk this morning.
+[66] ZH: 男 孩 今 天 早 上 把 这 本 笔 记 本 放 在 书 桌 上 。
+------------------------------------------------------------
+[67] EN: the teacher will open the door after class.
+[67] ZH: 老 师 放 学 后 会 打 开 这 扇 门 。
+------------------------------------------------------------
+[68] EN: the student will close the window before class.
+[68] ZH: 学 生 上 课 前 会 关 上 这 扇 窗 户 。
+------------------------------------------------------------
+[69] EN: the woman moved the book next to the laptop.
+[69] ZH: 那 位 女 士 放 学 后 在 笔 记 本 电 脑 里 使 用 这 本 笔 记 本 电 脑 。
+------------------------------------------------------------
+[70] EN: the man moved the laptop next to the book.
+[70] ZH: 那 位 男 士 放 学 后 把 这 本 笔 记 本 放 在 桌 子 上 。
+------------------------------------------------------------
+[71] EN: This sentence contains the phrase do not translate, but it still needs a natural Chinese translation.
+[71] ZH: 这 个 句 子 不 仅 仅 是 一 个 语 言 ， 而 且 还 包 含 了 语 言 翻 译 。
+------------------------------------------------------------
+[72] EN: The word Transformer should not become an ordinary electrical transformer in this machine learning sentence.
+[72] ZH: 在 Transformer 教 程 中 ， 这 个 手 写 Transformer 不 应 把 Transformer 误 译 成 无 关 的 日 常 词 。
+------------------------------------------------------------
+[73] EN: The tokenizer tokenizer tokenizer sequence should not make the output repeat the same word forever.
+[73] ZH: 分 词 器 不 是 字 典 ， 而 是 为 了 把 句 子 切 分 成 token 。
+------------------------------------------------------------
+[74] EN: This example is not a rule description; it is just an English sentence that needs translation.
+[74] ZH: 这 是 一 个 非 常 简 单 的 句 子 ， 因 为 它 不 是 一 个 语 言 。
+------------------------------------------------------------
+[75] EN: Please translate the sentence naturally instead of explaining how to translate it.
+[75] ZH: 请 注 意 ， 这 个 句 子 必 须 是 自 动 写 的 。
+------------------------------------------------------------
+[76] EN: The source mentions checkpoint and token, but door and window are still ordinary objects.
+[76] ZH: 文 件 系 统 可 以 在 其 中 部 署 ， 但 是 它 可 以 被 连 接 到 一 个 节 点 。
+------------------------------------------------------------
+[77] EN: The model should not output phrases like the correct translation is before giving the translation.
+[77] ZH: 翻 译 模 型 不 应 把 输 出 和 token 混 淆 ， 因 为 模 型 读 取 token 是 翻 译 模 型 的 一 部 分 。
+------------------------------------------------------------
+[78] EN: This input checks whether repeated technical words cause repeated Chinese output.
+[78] ZH: 这 个 手 写 Transformer 解 码 器 在 验 证 样 本 中 使 用 带 标 签 平 滑 。
+------------------------------------------------------------
+[79] EN: Although the sentence mentions validation loss, it should not produce a training log explanation.
+[79] ZH: 虽 然 句 子 不 清 楚 ， 但 验 证 loss 仍 然 可 以 帮 助 模 型 学 习 。
+------------------------------------------------------------
+[80] EN: The sentence includes encoder, decoder, and a notebook, but it is still one normal sentence.
+[80] ZH: 这 个 编 码 器 有 两 个 分 词 器 ， 但 是 解 码 器 还 是 保 留 了 句 子 。
+------------------------------------------------------------

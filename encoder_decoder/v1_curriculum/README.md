@@ -1,6 +1,6 @@
 # Encoder-Decoder Transformer v1_curriculum
 
-`v1_curriculum` 是手写 Encoder-Decoder Transformer 英译中项目的课程学习版本，当前已补充 Stage1 到 Stage5 的训练记录与指标分析。
+`v1_curriculum` 是手写 Encoder-Decoder Transformer 英译中项目的课程学习版本，当前已补充 Stage1 到 Stage5 的训练记录、最终 checkpoint、推理日志和推理分析。
 
 该版本基于 `v0_baseline` 的训练和推理分析重新设计。`v0_baseline` 已经证明训练闭环可以跑通，但也暴露出数据语体单一、技术术语不稳定、日常英语泛化不足、复杂逻辑句处理较弱、checkpoint 不支持完整续训等问题。`v1_curriculum` 的目标是用更系统的数据工程和分阶段训练流程来解决这些问题。
 
@@ -15,11 +15,13 @@
 | Training report | 已补充 |
 | V0/V1 comparison | 已补充 |
 | Training metrics summary | 已补充 |
-| Inference report | 后续更新 |
-| Checkpoint | 后续更新 |
-| Final model analysis | 后续更新 |
+| Inference script | 已补充 |
+| Inference logs | 已补充 |
+| Inference report | 已补充 |
+| Checkpoint | 已补充分片文件，Git LFS |
+| Final model analysis | 已补充阶段性推理分析 |
 
-当前版本已提交训练数据、tokenizer、训练脚本和训练分析文档。推理结果、错误分析和 checkpoint 会在后续完成复核后再提交。
+当前版本已提交训练数据、tokenizer、训练脚本、最终 checkpoint、推理脚本、推理日志和推理分析文档。
 
 ## Training Documents
 
@@ -31,6 +33,21 @@ V1 训练分析文档统一放在 `doc/` 目录下：
 | [`doc/v1_curriculum_training_report.md`](./doc/v1_curriculum_training_report.md) | V1 课程学习主训练报告，包含 Stage1 到 Stage5 训练路线、Stage5 参数调整和当前不足 |
 | [`doc/v1_vs_v0_comparison.md`](./doc/v1_vs_v0_comparison.md) | V0 baseline 与 V1 curriculum 的训练目标、数据组织和翻译能力对比 |
 | [`doc/v1_training_metrics_summary.md`](./doc/v1_training_metrics_summary.md) | V1 课程学习训练记录与指标分析，包含阶段指标、checkpoint 传递和 Stage5 参数对照 |
+
+## Inference Documents
+
+V1 推理相关文件按用途分开放在 `checkpoints/`、`logs/` 和 `results/` 目录下：
+
+| 路径 | 内容 |
+|---|---|
+| [`checkpoints/README.md`](./checkpoints/README.md) | V1 final best checkpoint 说明 |
+| [`checkpoints/checkpoint_best.part00.pt`](./checkpoints/checkpoint_best.part00.pt) | V1 最终 checkpoint 第 1 个分片，使用 Git LFS 管理 |
+| [`checkpoints/checkpoint_best.part01.pt`](./checkpoints/checkpoint_best.part01.pt) | V1 最终 checkpoint 第 2 个分片，使用 Git LFS 管理 |
+| [`logs/v1_inference_cases.txt`](./logs/v1_inference_cases.txt) | 本轮推理实际使用的 80 条英文输入 |
+| [`logs/v1_inference_raw_output.log`](./logs/v1_inference_raw_output.log) | 推理脚本原始控制台输出 |
+| [`logs/v1_inference_log_summary.md`](./logs/v1_inference_log_summary.md) | 推理日志结构化摘要 |
+| [`results/v1_inference_report.md`](./results/v1_inference_report.md) | V1 完整推理报告 |
+| [`results/v1_inference_summary.md`](./results/v1_inference_summary.md) | V1 推理摘要 |
 
 ## Goal
 
@@ -181,6 +198,30 @@ src/train_encoder_decoder_curriculum.py
 7. 保存 latest / archive / best checkpoint
 8. 打印基础句、逻辑句、技术术语、复杂逻辑和 anti-pollution 固定样例翻译
 
+## Inference Script
+
+推理脚本：
+
+```text
+src/infer_encoder_decoder_curriculum.py
+```
+
+从仓库根目录运行：
+
+```bash
+cat encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.part00.pt \
+    encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.part01.pt \
+    > encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.pt
+
+python3 encoder_decoder/v1_curriculum/src/infer_encoder_decoder_curriculum.py \
+  --checkpoint encoder_decoder/v1_curriculum/checkpoints/checkpoint_best.pt \
+  --tokenizer-dir encoder_decoder/v1_curriculum/tokenizer/en_zh_stage_tokenizer_48000 \
+  --input-file encoder_decoder/v1_curriculum/logs/v1_inference_cases.txt \
+  --batch-size 16
+```
+
+当前推理脚本使用 batch greedy decode。推理报告中的结论来自 `logs/v1_inference_raw_output.log`。
+
 ## Run
 
 从仓库根目录运行：
@@ -193,17 +234,15 @@ bash scripts/run_train_encoder_decoder_v1_curriculum.sh
 
 ## Current Limitations
 
-1. 当前不提交 checkpoint；checkpoint 会在完成复核后再补充。
-2. 当前不提交 stage 下的 `test.jsonl`，统一验证只使用 `final_eval.jsonl`。
-3. 当前版本仍以内嵌模型源码为主，尚未拆分为独立 `model.py`。
-4. 当前推理报告和最终模型分析还未补充。
-5. 当前模型仍保留 Post-LN、LayerNorm、ReLU FFN 和 greedy decode 等基础设计，后续仍有结构优化空间。
+1. 当前不提交 stage 下的 `test.jsonl`，统一验证只使用 `final_eval.jsonl`。
+2. 当前版本仍以内嵌模型源码为主，尚未拆分为独立 `model.py`。
+3. 当前推理结果显示，复杂逻辑、普通书面句、source following 和 anti-pollution 仍然没有完全稳定。
+4. 当前模型仍保留 Post-LN、LayerNorm、ReLU FFN 和 greedy decode 等基础设计，后续仍有结构优化空间。
 
 ## Next Updates
 
 后续将继续补充：
 
-1. 最终 checkpoint
-2. 推理报告
-3. 错误分析和泛化分析
-4. 模型结构和推理策略的后续优化记录
+1. 更细的错误分析和泛化分析
+2. 模型结构和推理策略的后续优化记录
+3. 下一版结构改进后的对照训练和推理结果

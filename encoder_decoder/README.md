@@ -7,7 +7,7 @@
 | 版本 | 目录 | 状态 | 说明 |
 |------|------|------|------|
 | v0_baseline | [v0_baseline/](./v0_baseline/) | 训练已完成 | 基于 OPUS-100 en-zh 的 baseline 版本，已提交 checkpoint、训练日志、推理日志和错误分析 |
-| v1_curriculum | [v1_curriculum/](./v1_curriculum/) | 已补充训练记录 | 基于 Stage1 到 Stage5 的课程学习版本，已提交训练数据、48k tokenizer、训练脚本和训练分析文档 |
+| v1_curriculum | [v1_curriculum/](./v1_curriculum/) | 已补充训练与推理记录 | 基于 Stage1 到 Stage5 的课程学习版本，已提交训练数据、48k tokenizer、训练/推理脚本、最终 checkpoint 和推理分析文档 |
 
 ## Version Relationship
 
@@ -21,4 +21,4 @@
 4. Stage4：综合逻辑、复杂逻辑和技术逻辑
 5. Stage5：最终收束、mixed regression、防遗忘和 anti-pollution stability
 
-v1 当前已补充 Stage1 到 Stage5 的训练记录、V0/V1 对比和指标分析。推理报告、checkpoint 和最终模型分析会在后续完成复核后再补充。
+v1 当前已补充 Stage1 到 Stage5 的训练记录、V0/V1 对比、指标分析、最终 checkpoint、推理日志和推理报告。后续会继续围绕错误分析、推理策略和下一版结构优化补充更新。
