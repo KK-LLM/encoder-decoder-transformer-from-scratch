@@ -1,6 +1,6 @@
 # Encoder-Decoder Transformer v1_curriculum
 
-`v1_curriculum` 是手写 Encoder-Decoder Transformer 英译中项目的课程学习版本，目前正在训练中。
+`v1_curriculum` 是手写 Encoder-Decoder Transformer 英译中项目的课程学习版本，当前已补充 Stage1 到 Stage5 的训练记录与指标分析。
 
 该版本基于 `v0_baseline` 的训练和推理分析重新设计。`v0_baseline` 已经证明训练闭环可以跑通，但也暴露出数据语体单一、技术术语不稳定、日常英语泛化不足、复杂逻辑句处理较弱、checkpoint 不支持完整续训等问题。`v1_curriculum` 的目标是用更系统的数据工程和分阶段训练流程来解决这些问题。
 
@@ -12,12 +12,24 @@
 | Unified tokenizer | 已准备，48,000 vocab |
 | Unified validation set | 已准备，`final_eval.jsonl` |
 | Training script | 已准备 |
-| Training report | 后续更新 |
+| Training report | 已补充 |
+| V0/V1 comparison | 已补充 |
+| Training metrics summary | 已补充 |
 | Inference report | 后续更新 |
 | Checkpoint | 后续更新 |
 | Final model analysis | 后续更新 |
 
-当前版本只提交训练数据、tokenizer 和训练脚本。训练指标、推理结果、错误分析和 checkpoint 会在训练完成并复核后再提交。
+当前版本已提交训练数据、tokenizer、训练脚本和训练分析文档。推理结果、错误分析和 checkpoint 会在后续完成复核后再提交。
+
+## Training Documents
+
+V1 训练分析文档统一放在 `doc/` 目录下：
+
+| 文件 | 内容 |
+|------|------|
+| [`doc/v1_curriculum_training_report.md`](./doc/v1_curriculum_training_report.md) | V1 课程学习主训练报告，包含 Stage1 到 Stage5 训练路线、Stage5 参数调整和当前不足 |
+| [`doc/v1_vs_v0_comparison.md`](./doc/v1_vs_v0_comparison.md) | V0 baseline 与 V1 curriculum 的训练目标、数据组织和翻译能力对比 |
+| [`doc/v1_training_metrics_summary.md`](./doc/v1_training_metrics_summary.md) | V1 课程学习训练记录与指标分析，包含阶段指标、checkpoint 传递和 Stage5 参数对照 |
 
 ## Goal
 
@@ -180,19 +192,17 @@ bash scripts/run_train_encoder_decoder_v1_curriculum.sh
 
 ## Current Limitations
 
-1. 当前版本正在训练中，暂不提交训练指标、推理报告或最终结论。
-2. 当前不提交 checkpoint；checkpoint 会在训练完成并确认后再补充。
-3. 当前不提交 stage 下的 `test.jsonl`，统一验证只使用 `final_eval.jsonl`。
-4. 当前版本仍以内嵌模型源码为主，尚未拆分为独立 `model.py`。
-5. 当前 README 只描述训练设计和已准备资源，不提前承诺最终翻译质量。
+1. 当前不提交 checkpoint；checkpoint 会在完成复核后再补充。
+2. 当前不提交 stage 下的 `test.jsonl`，统一验证只使用 `final_eval.jsonl`。
+3. 当前版本仍以内嵌模型源码为主，尚未拆分为独立 `model.py`。
+4. 当前推理报告和最终模型分析还未补充。
+5. 当前模型仍保留 Post-LN、LayerNorm、ReLU FFN 和 greedy decode 等基础设计，后续仍有结构优化空间。
 
 ## Next Updates
 
-后续将根据真实训练进展补充：
+后续将继续补充：
 
-1. Stage1-Stage5 训练日志
-2. 各阶段 valid loss 趋势
-3. fixed examples 翻译变化
-4. 最终 checkpoint
-5. 推理报告
-6. 错误分析和泛化分析
+1. 最终 checkpoint
+2. 推理报告
+3. 错误分析和泛化分析
+4. 模型结构和推理策略的后续优化记录
