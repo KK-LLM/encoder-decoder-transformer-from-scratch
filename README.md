@@ -36,14 +36,14 @@
 ├── .gitignore
 ├── .gitattributes
 ├── requirements.txt
-├── docs/
-│   ├── experiment_notes.md
-│   ├── architecture_notes.md
-│   └── checkpoint_and_reproducibility.md
 ├── encoder_decoder/
 │   ├── README.md
 │   ├── v0_baseline/
 │   │   ├── README.md
+│   │   ├── doc/
+│   │   │   ├── architecture_notes.md
+│   │   │   ├── checkpoint_and_reproducibility.md
+│   │   │   └── experiment_notes.md
 │   │   ├── src/
 │   │   ├── data/
 │   │   ├── tokenizer/
@@ -53,6 +53,7 @@
 │   └── v1_curriculum/
 │       ├── README.md
 │       ├── doc/
+│       │   ├── architecture_notes.md
 │       │   ├── v1_curriculum_training_report.md
 │       │   ├── v1_vs_v0_comparison.md
 │       │   └── v1_training_metrics_summary.md
@@ -245,13 +246,15 @@ bash scripts/run_train_encoder_decoder_v1_curriculum.sh
 推荐阅读路径：
 
 1. [v0_baseline README](./encoder_decoder/v0_baseline/README.md)
-2. [v0 训练脚本](./encoder_decoder/v0_baseline/src/train_encoder_decoder.py)
-3. [v0 推理报告](./encoder_decoder/v0_baseline/results/inference_report.md)
-4. [v1_curriculum README](./encoder_decoder/v1_curriculum/README.md)
-5. [v1 数据说明](./encoder_decoder/v1_curriculum/data/README.md)
-6. [v1 训练脚本](./encoder_decoder/v1_curriculum/src/train_encoder_decoder_curriculum.py)
-7. [v1 主训练报告](./encoder_decoder/v1_curriculum/doc/v1_curriculum_training_report.md)
-8. [v1 与 v0 对比报告](./encoder_decoder/v1_curriculum/doc/v1_vs_v0_comparison.md)
-9. [v1 训练记录与指标分析](./encoder_decoder/v1_curriculum/doc/v1_training_metrics_summary.md)
+2. [v0 架构说明](./encoder_decoder/v0_baseline/doc/architecture_notes.md)
+3. [v0 训练脚本](./encoder_decoder/v0_baseline/src/train_encoder_decoder.py)
+4. [v0 推理报告](./encoder_decoder/v0_baseline/results/inference_report.md)
+5. [v1_curriculum README](./encoder_decoder/v1_curriculum/README.md)
+6. [v1 架构说明](./encoder_decoder/v1_curriculum/doc/architecture_notes.md)
+7. [v1 数据说明](./encoder_decoder/v1_curriculum/data/README.md)
+8. [v1 训练脚本](./encoder_decoder/v1_curriculum/src/train_encoder_decoder_curriculum.py)
+9. [v1 主训练报告](./encoder_decoder/v1_curriculum/doc/v1_curriculum_training_report.md)
+10. [v1 与 v0 对比报告](./encoder_decoder/v1_curriculum/doc/v1_vs_v0_comparison.md)
+11. [v1 训练记录与指标分析](./encoder_decoder/v1_curriculum/doc/v1_training_metrics_summary.md)
 
 后续 Encoder-Decoder 更新会根据真实训练进展补充到对应版本目录中，避免提前承诺尚未完成的训练结果。

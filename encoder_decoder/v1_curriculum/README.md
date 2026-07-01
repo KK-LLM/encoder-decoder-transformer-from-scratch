@@ -27,6 +27,7 @@ V1 训练分析文档统一放在 `doc/` 目录下：
 
 | 文件 | 内容 |
 |------|------|
+| [`doc/architecture_notes.md`](./doc/architecture_notes.md) | V1 当前训练脚本中的模型结构、mask、attention、训练 forward 和架构限制说明 |
 | [`doc/v1_curriculum_training_report.md`](./doc/v1_curriculum_training_report.md) | V1 课程学习主训练报告，包含 Stage1 到 Stage5 训练路线、Stage5 参数调整和当前不足 |
 | [`doc/v1_vs_v0_comparison.md`](./doc/v1_vs_v0_comparison.md) | V0 baseline 与 V1 curriculum 的训练目标、数据组织和翻译能力对比 |
 | [`doc/v1_training_metrics_summary.md`](./doc/v1_training_metrics_summary.md) | V1 课程学习训练记录与指标分析，包含阶段指标、checkpoint 传递和 Stage5 参数对照 |

@@ -16,12 +16,23 @@
 | 文件 | 说明 |
 |------|------|
 | [src/train_encoder_decoder.py](./src/train_encoder_decoder.py) | 手写模型源码 + 训练闭环 |
-| `src/infer_encoder_decoder.py` | 手写模型源码 + 推理闭环 |
+| [src/infer_encoder_decoder.py](./src/infer_encoder_decoder.py) | 手写模型源码 + 推理闭环 |
+| [doc/](./doc/) | V0 架构说明、实验记录和 checkpoint 复现说明 |
 | [data/sample_data.jsonl](./data/sample_data.jsonl) | 200 条真实中英样例 |
 | [tokenizer/README.md](./tokenizer/README.md) | tokenizer 使用说明 |
 | [checkpoints/README.md](./checkpoints/README.md) | checkpoint 保存与当前限制 |
 | [logs/](./logs/) | 训练与推理量化数据 |
 | [results/](./results/) | 训练与推理分析报告 |
+
+## Documents
+
+V0 相关说明统一放在 `doc/` 目录下：
+
+| 文件 | 内容 |
+|------|------|
+| [doc/architecture_notes.md](./doc/architecture_notes.md) | V0 baseline 的手写 Transformer Encoder-Decoder 架构说明 |
+| [doc/experiment_notes.md](./doc/experiment_notes.md) | V0 训练实验设计、关键配置和训练结果摘要 |
+| [doc/checkpoint_and_reproducibility.md](./doc/checkpoint_and_reproducibility.md) | V0 checkpoint 保存策略、加载方式和当前复现限制 |
 
 ## Model Configuration
 
