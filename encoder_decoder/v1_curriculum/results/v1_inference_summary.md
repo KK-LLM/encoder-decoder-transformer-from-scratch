@@ -27,5 +27,3 @@
 ## 当前判断
 
 V1 的推理表现和训练报告中的判断是一致的：课程学习确实扩展了模型能力，尤其是基础短句和技术术语；但复杂逻辑、普通书面句、source following 和 anti-pollution 还没有完全收稳。
-
-这批推理结果可以作为 V1 当前阶段的真实记录。后续整理到 GitHub 时，建议保留 raw output，同时把推理报告、推理摘要和典型错误样例放到 `encoder_decoder/v1_curriculum/results/` 或对应文档目录中。
