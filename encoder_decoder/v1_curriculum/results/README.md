@@ -6,7 +6,7 @@
 
 | 文件 | 说明 |
 |---|---|
-| `v1_inference_report.md` | V1 完整推理报告，包含分类样例、V0/V1 对比、错误分析和后续方向 |
+| `v1_inference_report.md` | V1 完整推理报告，包含分类样例、V0/V1 对比和错误分析 |
 | `v1_inference_summary.md` | V1 推理摘要，适合 README 或文档索引引用 |
 
 ## Current Inference Conclusion
